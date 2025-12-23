@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>iPad pro Apple (IN)</title>
+
+     <!-- Boxicons CDN -->
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,0&icon_names=delivery_truck_speed" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+
+/* ---------------------- STYLE-CSS --------------------------------------- */
+
+* {
+ margin:0; 
+ padding:0;
+ box-sizing:border-box;
+ font-family:-apple-system, BlinkMacSystemFont, "SF Pro Text", 
+ "SF Pro Display", Arial, sans-serif;
+}
+
+/* ---------------------- TOP-NAVBAR-SECTION ---------------------------------- */
+
+.nav {
+  width: 100%;
+  background: #fff;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  backdrop-filter: blur(15px);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/*---- CENTER AREA ALLOWED TO EXPAND ----*/
+.nav-center {
+  flex: 1;
+  display: flex;
+  justify-content: center; 
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+.nav-list li,
+.nav-list li a {
+  color: #000;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: none;
+}
+.nav-list li a i {
+  font-size: 14px;
+}
+/*---- SEARCH + BAG ICONS ----*/
+.nav-action i {
+  color: #000;
+  font-size: 15px;
+  margin-left: 18px;
+  cursor: pointer;
+}
+/*----- Mobile apple hidden on desktop---*/
+.mobile-apple {
+  display: none;
+}
+/*---- Hamburger ----*/
+.menu-btn {
+  display: none;
+  width: 16px;
+  height: 10px;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  margin-left: 18px;
+}
+.menu-btn span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: #636161;
+  border-radius: 2px;
+}
+/*----- Right icons alignment ----*/
+.nav-action {
+  display: flex;
+  align-items: center;
+}
+/*----  Dropdown hidden by default  -----*/
+.dropdown-menu {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    padding: 60px 370px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    display: none;
+    margin-top: 25px;  
+}
+/*--- Blur strip only at bottom ---*/
+    .dropdown-menu::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      top: 100%;
+      height: 460px; /* strip height */
+      background: rgba(255, 255, 255, 0.708);
+      backdrop-filter: blur(50px);
+      -webkit-backdrop-filter: blur(50px);
+      pointer-events: none;
+    }
+.dropdown-menu.show {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0); 
+}
+.menu-panel{
+    display: flex;
+    gap: 90px;
+}
+.col-shop h4 {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 10px;
+}
+.col h4 {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 10px;
+}
+.col-shop a {
+    display: block;
+    margin: 6px 0;
+    font-size: 22px;
+    font-weight: 500;
+    color: #000;
+    text-decoration: none;
+}
+.col a {
+    display: block;
+    margin: 6px 0;
+    font-size: 14px;
+    color: #000;
+    text-decoration: none;
+}
+.col a:hover {
+    color: #888;
+}
+
+/*---- SEARCH-DROPD-DOWN ---- */
+.search-dropdown {
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 70px 25%;
+  display: none;
+  z-index: 999;
+}
+ .search-dropdown::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  top: 100%;
+  height: 470px; /* strip height */
+  background: rgba(255, 255, 255, 0.708);
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+  pointer-events: none;
+}
+.search-dropdown.active {
+  display: block;
+}
+.search-input-box input {
+  width: 100%;
+  font-size: 22px;
+  padding: 12px 0;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #ccc;
+}
+.search-quick-links {
+  margin-top: 30px;
+}
+.search-quick-links h4 {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 12px;
+}
+.search-quick-links a {
+  display: block;
+  font-size: 16px;
+  color: #000;
+  text-decoration: none;
+  padding: 6px 0;
+}
+.search-quick-links a:hover {
+  text-decoration: underline;
+}
+/* --- BAG ICON --- */
+.bag-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+.bag-wrapper i {
+  font-size: 16px;
+}
+/* count */
+.bag-count {
+  position: absolute;
+  bottom: 0;
+  right: -5px;
+  width: 14px;
+  height: 14px;
+  background: #000;
+  color: #fff;
+  font-size: 10px;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+/* ----- BAG DROPDOWN ---------------- */
+.bag-dropdown {
+  position: fixed;
+  top: 0;            
+  left: 0;
+  width: 100%;
+  background: #fff;
+  padding: 80px 25%;    
+  display: none;
+  z-index: 1000;
+  border-bottom: 1px solid #ddd;
+}
+/* Blur background strip */
+.bag-dropdown::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: 400px;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  pointer-events: none;
+}
+.bag-dropdown.active {
+  display: block;
+}
+/* Empty state */
+.empty-title {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.empty-sub {
+  font-size: 14px;
+  color: #666;
+  margin-top: 6px;
+}
+.empty-sub a {
+  color: #06c;
+  text-decoration: none;
+  text-decoration: underline;
+}
+.empty-sub a:hover{
+  color: rgba(0, 102, 204, 0.495);
+}
+.bag-divider {
+  height: 1px;
+  background: #eee;
+  margin: 16px 0;
+}
+/* Profile section */
+.profile-title {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 8px;
+}
+.profile-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  color: #000;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 3s;
+}
+.profile-link:hover{
+  color: #777;
+}
+.profile-link i {
+  font-size: 14px;
+}
+
+/* ---------------------- MAIN-HERO-SECTION ---------------------------------- */
+
+.buy-section {
+  width: 100%;
+  display: flex;
+  padding: 60px 120px;
+}
+.buy-left {
+  width: 45%;
+}
+.buy-left h1 {
+  font-size: 39px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+.buy-price {
+  font-size: 20px;
+  color: #444;
+  margin-bottom: 16px;
+}
+.ai {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.ai-title {
+  font-size: 12px;
+  font-weight: 500;
+}
+.learn {
+  color: #0071e3;
+  font-size: 12px;
+  text-decoration: none;
+}
+.learn:hover {
+  text-decoration: underline;
+}
+
+/* ---------------------- PRODUCT-DETAILS-SECTION ---------------------------------- */
+
+.product-details {
+  width: 100%;
+  padding: 50px 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px;
+}
+.product-details .buy-left {
+  flex: 1;
+}
+.product-details .buy-left img {
+  width: 100%;
+  max-width: 430px;
+  border-radius: 20px;
+  display: block;
+}
+/* RIGHT SIDE CONTENT */
+.product-details .buy-right {
+  flex: 1.4;
+}
+/* NEW Badge */
+.new-badge {
+  display: inline-block;
+  background: #ff3b30; 
+  color: #fff;
+  font-size: 14px;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-weight: 600; 
+}
+/* Page Title */
+.intro-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 10px 0 15px;
+  line-height: 1.15;
+  color: #1d1d1f;
+}
+/* Description under title */
+.intro-desc {
+  font-size: 16px;
+  color: #6e6e73;
+  max-width: 500px;
+  margin-top: 0;
+  line-height: 1.55;
+}
+.delivery-box {
+  background: #f5f5f7;
+  padding: 22px 28px;
+  border-radius: 10px;
+  width: 100%;
+  margin-top: 22px;
+}
+.delivery-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.icon {
+  width: 25px;
+}
+.title {
+  font-size: 15px;
+  font-weight: 400;
+  color: #1d1d1f;
+}
+.sub {
+  font-size: 13px;
+  color: #6e6e73;
+  margin-top: 7px;
+}
+/* Price Section */
+.price {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin-bottom: 10px;
+  margin-top: 32px;
+}
+.tax-info {
+  color: #6e6e73;
+  font-size: 14px;
+  margin-bottom: 22px;
+}
+/* Check out-btn Button */
+.Check-outbtn {
+  width: 100%;
+  padding: 14px 0;
+  background: #0071e3;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.Check-outbtn:hover {
+  background: #0077ed;
+}
+/* bottom-img Section */
+.small-card-container {
+  margin-top: 60px;
+  margin-bottom: 90px;
+}
+.small-card-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+.small-card {
+  width: 190px;
+  text-align: center;
+  cursor: pointer;
+}
+.small-card img {
+  width: 100%;
+  height: 100%;
+}
+
+/* ---------------------- INSIDE-ITEMS-SECTION ---------------------------------- */
+
+.whats-in-box {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 120px;
+    margin-top: 100px;
+}
+.whats-in-box h2 {
+    font-size: 38px;
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+.box-items {
+    display: flex;
+    justify-content: center;    
+}
+.box-card {
+    text-align: center;
+}
+.box-card img {
+     width: 350px;
+     height: 350px;
+     object-fit: contain;
+     display: block;
+     margin: 0 auto;
+      background-color: #F5F5F7;
+}
+.box-card p {
+    margin-top: 16px;
+    font-size: 16px;
+    font-weight: 400;
+    
+}
+
+/* ---------------------- IPAD-CARDS-SECTION ---------------------------------- */
+
+.compare-title {
+  text-align: center;
+  padding: 20px 0;
+}
+.compare-title h2 {
+  font-size: 34px;
+  font-weight: 700;
+  padding-bottom: 22px;
+
+}
+.compare-title a{
+    text-decoration: none;
+    color: #0071e3;
+}
+.compare-title a:hover{
+    text-decoration: underline;
+}
+.airpods-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px 120px;
+  margin-bottom: 80px;
+  flex-wrap: wrap;
+}
+.card {
+  width: 260px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 18px;
+  text-align: center;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.1);
+}
+.card img {
+  width: 180px;
+  margin-bottom: 15px;
+}
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.card-price {
+  font-size: 14px;
+  color: #555;
+}
+
+/* ---------------------- VIDEO-PLAY-SECTION ---------------------------------- */
+
+.tv-main-title {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-top: 50px;
+  margin-bottom: 70px;
+  color: #1d1d1f;
+}
+/* Center video */
+.video-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 120px;
+}
+/* Video Styling */
+.feature-video {
+  width: 80%;
+  height: 520px;
+  object-fit: cover;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.20);
+  border-radius: 8px;
+}
+
+/* ---------------------- FOOTER-SECTION ---------------------------------- */
+.apple-footer {
+  background: #f5f5f7;
+  padding: 60px 0 30px;
+  color: #6e6e73;
+}
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+/* Columns */
+.footer-col {
+  flex: 1 1 200px;
+}
+.footer-col h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin-bottom: 8px;
+}
+.footer-col ul {
+  list-style: none;
+}
+.footer-col ul li {
+  margin: 6px 0;
+}
+.footer-col ul li a {
+  font-size: 14px;
+  color: #6e6e73;
+  text-decoration: none;
+}
+.footer-col ul li a:hover {
+  text-decoration: underline;
+}
+
+/* -------------------- Resonsive Code ---------------------- */
+
+/* -------------------- Nav-Bar ---------------------- */
+@media (max-width: 900px) {
+  .nav-list {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    gap: 0;
+    display: none;
+    padding: 12px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  }
+   .nav {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+   }
+  /* show menu when hamburger clicked */
+  .nav-list.show {
+    display: flex;
+  }
+   .nav-list li {
+    font-size: 17px;
+    padding: 12px 20px;
+  }
+  .nav-center{
+    flex: 1;
+    display: flex;
+    justify-content: right;
+  }
+  /* Show mobile apple logo */
+  .mobile-apple {
+    display: flex;
+    align-items: center;
+  }
+  .mobile-apple i {
+    font-size: 16px;
+    color: #000; /* black apple */
+  }
+  /* Show hamburger */
+  .menu-btn {
+    display: flex;
+  }
+  /* Proper spacing on right */
+  .nav-action i {
+    margin-left: 16px;
+    font-size: 16px;
+  }
+  /* Layout fix */
+  .nav-inner {
+    justify-content: space-between;
+  }
+}
+/* -------------------- Main Buy ---------------------- */
+@media (max-width: 768px) {
+  .buy-section {
+    flex-direction: column;
+    padding: 32px 20px;
+    padding-top: 100px;
+  }
+  .buy-left {
+    width: 100%;
+  }
+  .buy-left h1 {
+    font-size: 26px;
+    line-height: 1.25;
+    margin-bottom: 10px;
+  }
+  .buy-price {
+    font-size: 15px;
+    line-height: 1.4;
+    margin-bottom: 14px;
+  }
+  .ai {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .ai-title,
+  .learn {
+    font-size: 12px;
+  }
+}
+/* ------------------ Product Details ------------------------ */
+@media (max-width: 768px) {
+  /* Main layout */
+  .product-details {
+    flex-direction: column;
+    padding: 32px 20px;
+    gap: 40px;
+  }
+  /* Left image */
+  .product-details .buy-left {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .product-details .buy-left img {
+    max-width: 320px;
+    border-radius: 16px;
+  }
+  /* Right content */
+  .product-details .buy-right {
+    width: 100%;
+  }
+  .new-badge {
+    font-size: 12px;
+    padding: 4px 12px;
+  }
+  .intro-title {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+  .intro-desc {
+    font-size: 14px;
+    max-width: 100%;
+  }
+  /* Delivery box */
+  .delivery-box {
+    padding: 18px;
+  }
+  .delivery-row {
+    gap: 12px;
+  }
+  .icon {
+    width: 22px;
+  }
+  .title {
+    font-size: 14px;
+  }
+  .sub {
+    font-size: 12px;
+  }
+  /* Price & button */
+  .price {
+    font-size: 20px;
+    margin-top: 24px;
+  }
+  .tax-info {
+    font-size: 13px;
+  }
+  .Check-outbtn {
+    font-size: 15px;
+    padding: 14px 0;
+  }
+  /* Bottom cards */
+  .small-card-container {
+    margin-top: 40px;
+    margin-bottom: 60px;
+  }
+  .small-card-list {
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 0 10px;
+  }
+  .small-card {
+    min-width: 140px;
+  }
+}
+/* -------------------- What is in Box ---------------------- */
+@media (max-width: 768px) {
+  .whats-in-box {
+    margin-top: 60px;
+    margin-bottom: 80px;
+    padding: 0 20px;
+    
+  }
+  .whats-in-box h2 {
+    font-size: 28px;
+    margin-bottom: 32px;
+  }
+  .box-items {
+    align-items: center;
+  }
+  .box-card img {
+    width: 100%;
+    max-width: 400px;
+    height: 146px;
+    background-color: #F5F5F7;
+  }
+  .box-card p {
+    font-size: 14px;
+    margin-top: 12px;
+  }
+}
+/* ---------------------- iPad-cards -------------------- */
+@media (max-width: 768px) {
+  .compare-title {
+    padding: 10px 20px;
+  }
+  .compare-title h2 {
+    font-size: 28px;
+    padding-bottom: 14px;
+  }
+  .compare-title a {
+    font-size: 14px;
+  }
+  .airpods-cards {
+    padding: 30px 16px;
+    gap: 24px;
+  }
+  .card {
+    width: 100%;
+    max-width: 250px;
+  }
+  .card img {
+    width: 160px;
+  }
+  .card h3 {
+    font-size: 18px;
+  }
+  .card-price {
+    font-size: 13px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!----------------------------- DROPDOWN-MENU -------------------------------------->
+
+<div id="navbar"></div>
+
+<!----------------------------- MAIN-HERO-SECTION -------------------------------------->
+
+<section class="buy-section">
+      <div class="buy-left">
+      <h1>Buy iPad Pro</h1>
+      <p class="buy-price">From ₹9,317.00/mo.<br>with instant cashback and No Cost EMI</p>
+           <div class="ai">
+           <span class="ai-title">Apple Intelligence</span>
+           <a href="#" class="learn">Learn more</a>
+        </div>
+      </div>
+</section>
+
+ <!----------------------------- PRODUCT-DETAILS-SECTION -------------------------------------->
+
+<section class="product-details">
+          <div class="buy-left">
+          <img src="https://i.pinimg.com/1200x/15/13/8a/15138a362dde15b780e4797e12abf3af.jpg" alt="AirPods Pro 3" class="main-product-img">
+       </div> 
+          <div class="buy-right">
+          <span class="new-badge">New</span>
+          <h1 class="intro-title">Buy iPad Pro</h1>
+          <p class="intro-desc">
+            Now with the world's best in-ear Active Noise Cancellation,
+            all-new heart rate sensing,and up to 8 hours of battery life.
+          </p>
+<!-- Apple Grey Box -->
+          <div class="delivery-box">
+          <div class="delivery-row">
+          <span class="material-symbols-outlined">delivery_truck_speed</span>
+          <div>
+            <p class="title">Delivers to 560017</p>
+            <p class="sub">Order by 4:00 pm — Tomorrow (Free Delivery)</p>
+        </div>
+    </div>
+          <div class="delivery-row">
+          <img src="https://img.icons8.com/ios-filled/50/000000/shop.png" class="icon">
+          <div>
+            <p class="title">Order Now. Pick up in store:</p>
+            <p class="sub">Today</p>
+        </div>
+    </div>
+<!-- price Section -->
+      <p class="price">₹45,900</p>
+      <p class="tax-info">(Incl. of all taxes)</p>
+<!-- BUY BUTTON -->
+        <button class="Check-outbtn"  onclick="addToBag()">Add to bag</button> 
+       </div>  
+</section>
+
+<!----------------------------- INSIDE-ITEMS-SECTION -------------------------------------->
+
+<section class="whats-in-box">
+    <h2>What's in the Box</h2>
+    <div class="box-items">
+        <div class="box-card">
+            <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-pro-11-witb-spaceblack-wifi-202405?wid=580&hei=680&fmt=jpeg&qlt=90&.v=VmZyMGJaRGRneGVrVWdYK1BVR3BXbnFBVlM3UFFkSEk5dkUvZGszL1g1V09BanpWQ1hUdk5OTFV3cnh4NHJTdXRJeTRHZTNjc1JRYlNTTXoyVUZhUE1wdUt3S25hMjhaakhLSUtSV3lSd2NpTEkzMmQ1Si9SWk82R3NpSEw2dDU" alt="Item 1">
+            <p>11" ipad pro</p>
+        </div>
+        <div class="box-card">
+            <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-pro-witb-black-cable-202405?wid=166&hei=680&fmt=jpeg&qlt=90&.v=M0pyczF2Rnd2SzFaNGtPSnRYRHRGazU3M1NPd1BEU0NjL0RQNTIrcnc0ZWNwRXJFZ3lyNnBoYkxUM2d2YzZLV2JGcXNRQnFCV0w3WVRjTExvdm1ic1NPRjBLWk5xd3FnckxJc3ppamFnSjhVRk5BYjU4dkMrYjBKSjFqVXFOVGg" alt="Item 2">
+            <p>USB-C Charge Cable</p>
+        </div>
+        <div class="box-card">
+            <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-pro-witb-adapter-202405_GEO_IN?wid=310&hei=680&fmt=jpeg&qlt=90&.v=RmJqQWxBbWFlaWVuT1p4ci9yS2hVRk9wbzBYcDFVdkNJd3hLOWtiUTJuS2MvalZlRlU5eFlRY3NJWXNKL25OaFMwWnZwL3FIMTFsdjJkaGdCV1RvWWd3bXZGUlA2TmRrRk01aHdyNDhwMWJXUmFycHZGbGxmNmFSTjBqTjRITk0" alt="Item 3">
+            <p>20W USB-C Power Adapter</p>
+        </div>
+    </div>
+</section>
+
+<!----------------------------- IPAD-CARDS-SECTION -------------------------------------->
+
+ <section class="airpods-compare">
+          <div class="compare-title">
+          <h2>Compare iPad models</h2>
+          <a href="#">See which iPad is right for you ></a>
+       </div>
+          <div class="airpods-cards">
+          <div class="card">
+          <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-compare-header-air-202405?wid=392&hei=398&fmt=png-alpha&.v=bk5Ha2llcUlIczRSRUt0WDVzK2I3aEp0T1lvbEU5VzVUeFMyYUl3ZjA1RVk2Q3FubUg5cC93VlMzQkExanhMSzAzOVFHb3N0MkVmS01ZcFh0d1Y4R2hvR0JUOE5DanRnclpMbkNkbll4VFE" alt="">
+          <h3>iPad Air</h3>
+          <p class="card-price">From ₹59,900</p>
+       </div>
+          <div class="card">
+          <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-compare-header-202405?wid=392&hei=398&fmt=png-alpha&.v=bk5Ha2llcUlIczRSRUt0WDVzK2I3a3d5S3MwalZ0KzJYUzlaTEovR3lnM0JzNjk4alZXc1V3QlppSlJEdDY5eVJmWkRLbnF4V0o4MC80MUErK0tHaS82WXdLZXN4NXdtV2c5K0Z4cHFIU0E" alt="">
+          <h3>iPad </h3>
+          <p class="card-price">From ₹44,900</p>
+       </div>
+          <div class="card">
+          <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-compare-header-mini-202410?wid=392&hei=398&fmt=png-alpha&.v=bk5Ha2llcUlIczRSRUt0WDVzK2I3c04vK0oyZitPeVVabFo4Uk42WnozYmV3dlpHNHJuUVlvci9PTGsyUVRENW15d1FhSDJ0bkR0ZGZtUjZJNmFveGRWWTR2SnZHTE1hOW4rRktudXVmU1U" alt="">
+          <h3>iPad mini</h3>
+          <p class="card-price">From ₹39,900</p>
+       </div>
+</section>
+
+<!----------------------------- VIDEO-PLAY-SECTION -------------------------------------->
+
+<h1 class="tv-main-title"> Watch, sing and play. <br>On the big screen.
+</h1>
+          <div class="video-wrapper">
+          <video class="feature-video" width="800" height="450" autoplay loop muted playsinline >
+          <source src="video_main_page.mp4" type="video/mp4">
+        </video>
+</div>
+
+<!----------------------------- FOOTER-SECTION -------------------------------------->
+
+<footer class="apple-footer">
+  <div class="footer-container">
+    <div class="footer-col">
+      <h4>Shop and Learn</h4>
+      <ul>
+        <li><a href="#">Store</a></li>
+        <li><a href="#">Mac</a></li>
+        <li><a href="#">iPad</a></li>
+        <li><a href="#">iPhone</a></li>
+        <li><a href="#">Watch</a></li>
+        <li><a href="#">AirPods</a></li>
+        <li><a href="#">Accessories</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Account</h4>
+      <ul>
+        <li><a href="#">Manage Your Apple ID</a></li>
+        <li><a href="#">Apple Store Account</a></li>
+        <li><a href="#">iCloud.com</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Apple Store</h4>
+      <ul>
+        <li><a href="#">Find a Store</a></li>
+        <li><a href="#">Genius Bar</a></li>
+        <li><a href="#">Today at Apple</a></li>
+        <li><a href="#">Apple Camp</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>For Business</h4>
+      <ul>
+        <li><a href="#">Apple and Business</a></li>
+        <li><a href="#">Shop for Business</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>About Apple</h4>
+      <ul>
+        <li><a href="#">Newsroom</a></li>
+        <li><a href="#">Leadership</a></li>
+        <li><a href="#">Career Opportunities</a></li>
+        <li><a href="#">Ethics & Compliance</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!----------------------------- JS-FILES -------------------------------------->
+
+<script src="js_navbar_loader.js"></script>
+<script src="js_dropdown_searchdown.js"></script>
+<script src="js_bag.js"></script>
+
+</body>
+</html>
+
