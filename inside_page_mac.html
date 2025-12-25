@@ -99,16 +99,15 @@
 }
 /*----  Dropdown hidden by default  -----*/
 .dropdown-menu {
-    position: absolute;
-    top: 0px;
-    left: 0;
-    width: 100%;
-    padding: 60px 370px;
-    background: #fff;
-    border-bottom: 1px solid #eee;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-    display: none;
-    margin-top: 25px;  
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 70px 25%;
+  display: none;
+  z-index: 999; 
 }
 /*--- Blur strip only at bottom ---*/
 .dropdown-menu::after {
@@ -227,13 +226,13 @@
 /* count */
 .bag-count {
   position: absolute;
-  bottom: 0;
+  bottom: -3px;
   right: -5px;
-  width: 14px;
-  height: 14px;
+  width: 13px;
+  height: 13px;
   background: #000;
   color: #fff;
-  font-size: 10px;
+  font-size: 9px;
   border-radius: 50%;
   display: none;
   align-items: center;
@@ -312,6 +311,62 @@
 }
 .profile-link i {
   font-size: 14px;
+}
+
+/* ===== TOP ROW (IMAGE LEFT, BUTTON RIGHT) ===== */
+.bag-top-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+/* ===== LEFT: PREVIEW STACK ===== */
+.bag-preview-images {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+/* PREVIEW ITEM */
+.bag-preview-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+/* IMAGE */
+.bag-preview-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+/* TEXT */
+.bag-preview-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+.bag-preview-name {
+  font-size: 14px;
+  color: #1d1d1f;
+}
+.bag-preview-qty {
+  font-size: 13px;
+  color: #6e6e73;
+}
+/* ===== REVIEW BUTTON (RIGHT SIDE) ===== */
+.bag-preview-btn {
+  align-self: flex-start;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: #0071e3;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.bag-preview-btn:hover {
+  background-color: #005bb5;
 }
 
 /* ---------------------- MAIN-HERO-SECTION ---------------------------------- */
@@ -921,10 +976,10 @@
           </div>
       </div>
 <!-- price Section -->
-      <p class="price">₹1,10,900</p>
+      <p class="price" data-price="110900">1,10,900</p>
       <p class="tax-info">(Incl. of all taxes)</p>
 <!-- BUY BUTTON -->
-        <button class="Check-outbtn"  onclick="addToBag()">Add to bag</button> 
+        <button class="Check-outbtn" onclick="addToBag(this)">Add to bag</button>  
       </div>  
 </section>
 
