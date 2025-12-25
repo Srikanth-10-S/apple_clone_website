@@ -1,10 +1,11 @@
 <header class="nav">
-  <div class="nav-inner">
-  <!-- LEFT (Apple logo – mobile only) -->
-    <div class="mobile-apple">
-    <a href="index.html"><i class="fa fa-apple"></i></a>
+     <div class="nav-inner">
+
+<!-- LEFT (Apple logo – mobile only) -->
+       <div class="mobile-apple">
+       <a href="index.html"><i class="fa fa-apple"></i></a>
     </div>
-    <div class="nav-center">
+        <div class="nav-center">
         <nav class="nav-links" aria-label="Main navigation">
         <ul class="nav-list">
            <li><a href="index.html"><i class="fa fa-apple"></i></a></li>
@@ -20,8 +21,8 @@
            <li class="nav-item">Support</li>
            </ul>
            </nav>
-    <!-- Right Icons -->
-       <div class="nav-action">
+<!-- Right Icons -->
+        <div class="nav-action">
           <i class="bx bx-search" id="searchIcon"></i>
         <div class="bag-wrapper" id="bagIcon">
           <i class="bx bx-shopping-bag"></i>
@@ -36,16 +37,27 @@
 <!-- BAG DROPDOWN -->
 <div class="bag-dropdown" id="bagDropdown">
 
-  <div class="bag-empty" id="bagEmpty">
+  <!-- TOP ROW -->
+  <div class="bag-top-row">
 
-    <!-- TITLE + PREVIEW (SAME LINE) -->
-    <div class="bag-header">
-      <p class="empty-title">Your bag is empty.</p>
-      <button class="bag-preview-btn">Review Bag</button>
+    <!-- LEFT: PREVIEW IMAGES -->
+    <div class="bag-preview-images" id="bagPreviewImages">
+      <!-- items injected by JS -->
+
+      <!--  ADDED: shows “+ more items” BELOW last item (LEFT SIDE) -->
+      <p class="bag-more-text" id="bagMoreText" style="display:none;"></p>
     </div>
 
+    <!-- RIGHT: REVIEW BUTTON -->
+    <a href="checkout_page.html" class="bag-preview-btn">Review Bag</a>
+
+  </div>
+
+  <!-- EMPTY STATE -->
+  <div class="bag-empty" id="bagEmpty">
+    <p class="empty-title">Your bag is empty.</p>
     <p class="empty-sub">
-      <a href="signin.html">Sign in</a> to see if you have any saved items
+    <a href="signin.html">Sign in</a> to see if you have any saved items
     </p>
 
     <div class="bag-divider"></div>
@@ -56,22 +68,18 @@
     <a href="#" class="profile-link"><i class="bx bx-log-in"></i> Sign in</a>
   </div>
 
-  <!-- ITEMS CONTAINER -->
-  <div class="bag-items" id="bagItems"></div>
-
 </div>
-
-
 
 
 <!--DROPDOWN MENU -->
-<div class="dropdown-menu" id="mainDropdown">
+<div class="dropdown-menu" id="mainDropdown" >
   <div class="menu-panel" id="dropdownContent"></div>
 </div>
+
 <!-- SEARCH DROPDOWN -->
 <div class="search-dropdown" id="searchDropdown">
   <div class="search-input-box">
-    <input type="text" placeholder="Search apple.com" />
+    <input type="text" placeholder="Search apple 17 air" />
   </div>
   <div class="search-quick-links">
     <h4>Quick Links</h4>
@@ -81,4 +89,5 @@
     <a href="#">Ways to Buy</a>
     <a href="#">Support</a>
   </div>
+  
 </div>
