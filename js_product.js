@@ -1,4 +1,4 @@
-/* =================================================== PRODUCTS-JSCODE ====================================================== */
+/* =================================================== PRODUCTS-JS CODE ====================================================== */
 
 const sliderTrack = document.getElementById("sliderTrack");
 const leftBtn = document.getElementById("leftBtn");
