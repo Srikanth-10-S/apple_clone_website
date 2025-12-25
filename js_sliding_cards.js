@@ -1,4 +1,4 @@
-/* ========================================================= SLIDING-CARDS-JSCODE =========================================================== */
+/* ========================================================= SLIDING-CARDS-JS CODE =========================================================== */
 
 const container = document.getElementById("cardContainer");
 const btnLeft = document.getElementById("btnLeft");
@@ -41,22 +41,3 @@ function updateEdges() {
 container.addEventListener("scroll", updateEdges);
 window.addEventListener("resize", updateEdges);
 updateEdges();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
