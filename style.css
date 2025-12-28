@@ -1,5 +1,4 @@
-/* ---------------------- MAin STYLE-CSS-PAGE  --------------------------------------- */
-
+/* ---------------------- MAIN STYLE-CSS-PAGE  --------------------------------------- */
 * {  margin: 0; 
      padding: 0;
      box-sizing: border-box;
@@ -7,9 +6,7 @@
      Roboto, "Helvetica Neue", Arial;
      line-height: 1.35;   
   }
-
 /* ---------------------- TOP-NAVBAR-SECTION ---------------------------------- */
-
 .nav {
   width: 100%;
   background: #fff;
@@ -146,7 +143,6 @@
 .col a:hover {
     color: #888;
 }
-
 /*---- SEARCH-DROPD-DOWN ---- */
 .search-dropdown {
   position: fixed;
@@ -201,7 +197,6 @@
 .search-quick-links a:hover {
   text-decoration: underline;
 }
-
 /* --- BAG ICON --- */
 .bag-wrapper {
   position: relative;
@@ -299,7 +294,6 @@
 .profile-link i {
   font-size: 14px;
 }
-
 /* ===== TOP ROW (IMAGE LEFT, BUTTON RIGHT) ===== */
 .bag-top-row {
   display: flex;
@@ -360,9 +354,7 @@
   font-size: 13px;
   color: #6e6e73;
 }
-
 /* ---------------------- MAIN-HERO-SECTION ---------------------------------- */
-
 .hero-section {     
   display: flex;
   justify-content: center;
@@ -415,9 +407,10 @@
   color: #fff;
   transition: 0.2s ease-in-out;
 }
-
+.bg-video {
+  display: none;
+}
 /* ---------------------- IPHONE-AIR-SECTION ---------------------------------- */
-
 .Air-book {
   display: flex;
   justify-content: center;
@@ -471,9 +464,7 @@
   color: #fff;
   transition: 0.2s ease-in-out;
 }
-
 /* ---------------------- FLEX-BOX-SECTION ---------------------------------- */
-
 .main,
 .outer {
   display: flex;
@@ -542,9 +533,7 @@
   color: #fff;
   transition: 0.2s ease-in-out;
 }
-
 /* ---------------------- WATCH-SECTION ---------------------------------- */
-
 .Apple-watch {
   display: flex;
   justify-content: center;
@@ -603,9 +592,7 @@
   color: #fff;
   transition: 0.2s ease-in-out;
 }
-
-/* ---------------------- SLIDING-CARDS-SECTION ---------------------------------- */
-
+/* ---------------------- scroll-CARDS-SECTION ---------------------------------- */
 .main-title h2 {
   text-align: left;
   font-size: 30px;
@@ -621,7 +608,7 @@
   -webkit-text-fill-color: transparent;
   font-weight: 700;
 }
-.card-top-inside {
+.Buy-item {
     position: absolute;
     top: 25px;
     left: 40px;
@@ -631,19 +618,20 @@
     flex-direction: column;
     gap: 4px;
 }
-.card-top-inside h3 {
-  font-size: 32px !important;
+.Buy-item h3 {
+  font-size: 32px;
   line-height: 1.1;
-  font-weight: 800;
+  font-weight: 700;
+  color: #111;
 }
-.card-top-inside p {
+.Buy-item p {
     font-size: 16px;
     background: linear-gradient( 90deg, #35a1ef, #f67e39);
-   background-clip: text;
-  -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-weight: 500;
 }
-.card-top-inside span {
+.Buy-item span {
     font-size: 16px;
     color: #000;
     font-weight: 400;
@@ -779,9 +767,7 @@
 .slide-btn:active{ 
   transform:translateY(-50%) scale(.98);
  }
-
 /* ---------------------- SLIDING-CARDS-SECTION ---------------------------------- */
-
 .main-title {
   text-align: center;
   font-size: 50px;
@@ -793,67 +779,76 @@
 .product-slider {
   position: relative;
   width: 100%;
-  overflow:hidden;
-  margin: 0 auto;
+  overflow: hidden;
 }
 .slider-track {
   display: flex;
   gap: 30px;
-  padding: 20px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding:20px;
-  flex-wrap:nowrap;
-  padding-left: 90px;
-  padding-right: 90px;
+  padding: 20px 90px;
+  overflow: hidden;        
+  touch-action: none;     
+  overscroll-behavior: none;
 }
 .slider-track::-webkit-scrollbar {
   display: none;
 }
+/* CARD */
 .product-card {
   position: relative;
   width: 400px;
   height: 450px;
   border-radius: 25px;
-  overflow:hidden;
-  cursor:pointer;
-  flex:0 0 auto; 
-  background: transparent;
+  overflow: hidden;
+  flex: 0 0 auto;
+  cursor: pointer;
   transition: transform .35s ease, box-shadow .35s ease;
 }
 .product-card:hover {
-   transform: translateY(-1px);
-   box-shadow: 0 5px 12px rgba(0,0,0,0.25);
+  transform: translateY(-2px);
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.15),
+    0 1px 4px rgba(0, 0, 0, 0.1);
+}
+/* TEXT OVER IMAGE */
+.card-top-inside {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  z-index: 2;
+  color: #1d1d1f;
 }
 .card-top-inside h3 {
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 32px;
+  font-weight: 700;
 }
 .card-top-inside p {
   font-size: 14px;
-  margin-top: 4px;
-  color: #555;
+  margin-top: 6px;
+  background: linear-gradient( 90deg, #35a1ef, #f67e39);
+   background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .card-top-inside span {
   display: block;
   margin-top: 6px;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
 }
+/* IMAGE */
 .product-card img {
- width:100%;
- height:100%;
- object-fit:cover;
-  display:block;
-  border-radius:25px;
-}
-.bottom-arrows {
+  position: absolute;
+  inset: 0;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+/* ARROWS */
+.bottom-arrows {
   display: flex;
   justify-content: center;
-  margin-top: 18px;
-  margin-bottom: 20px;
   gap: 15px;
+  margin: 20px 0;
 }
 .arrow-small {
   width: 32px;
@@ -866,13 +861,11 @@
   transition: 0.25s;
 }
 .arrow-small:hover {
-  background: black;
-  color: white;
+  background: #000;
+  color: #fff;
   transform: scale(1.1);
 }
-
 /* ---------------------- VIDEO-PLAY-SECTION ---------------------------------- */
-
 /* Main Title */
 .tv-main-title {
   text-align: center;
@@ -898,9 +891,7 @@
   box-shadow: 0 12px 30px rgba(0,0,0,0.20);
   border-radius: 8px;
 }
-
 /* ----------------------  MUSIC-CARD-SECTION ---------------------------------- */
-
 .colo-display {
   width: 100%;
   display: flex;
@@ -949,9 +940,7 @@
 .music-btn:hover {
   background: rgba(255, 255, 255, 0.85);
 }
-
 /* ---------------------- FOOTER-SECTION ---------------------------------- */
-
 .apple-footer {
   background: #f5f5f7;
   padding: 60px 0 30px;
@@ -1024,8 +1013,7 @@
 }
 
 /*-----------------MOBILE-RESPONSIVE CODE-----------*/
-
-/* =================nav-MOBILE Responsive ================= */
+/* =================NAV-MOBILE Responsive ================= */
 @media (max-width: 900px) {
   /* Hide desktop center nav */
    /* hide menu by default */
@@ -1083,37 +1071,44 @@
 /* ================= HERO MOBILE RESPONSIVE ================= */
 @media (max-width: 768px) {
   .hero-content {
-    height: 70vh;
+    min-height: 100vh;
+    height: auto;
     padding: 32px 16px;
     background-position: center top;
+    background-image: none;
+    overflow: hidden;
   }
-  .hero-content h1 {
-    font-size: 34px;
-    margin-top: 30px;
+   .bg-video {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
   }
-  .hero-content h2 {
-    font-size: 18px;
-    margin-bottom: 24px;
-  }
-  .h-btn,
-  .h2-btn {
-    width: 144px;
-    padding: 10px 0;
+  .hero-content h1,
+  .hero-content h2,
+  .hero-content .cta-links {
+    display: none;
   }
 }
 /* =================iPhone-Air MOBILE RESPONSIVE ================= */
 @media (max-width: 768px) {
   .Air-content {
-    height: 70vh;
+    min-height: 90vh;
+    height: auto;
     padding: 40px 16px;
-    background-image: url(https://www.apple.com/in/home/heroes/iphone-family/images/hero_iphone_family__fuz5j2v5xx6y_medium.jpg);
+    background-image: url(https://i.pinimg.com/1200x/43/bf/f2/43bff25ef7961e8ea39d796b3edd96cc.jpg);
     background-position: center top;
   }
   .Air-content h2 {
+    color: #fff;
     font-size: 34px;
     margin-top: 20px;
   }
   .Air-content p {
+    color: #fff;
     font-size: 18px;
     margin-bottom: 24px;
   }
@@ -1131,7 +1126,8 @@
   }
   .box-1, .box-2, .box-3, .box-4 {
     width: 100%;
-    height: 55vh;
+    min-height: 73vh;
+    height: auto;
     border-radius: 0;
   }
   .box-1 h1, .box-2 h1, .box-3 h1, .box-4 h1 {
@@ -1140,16 +1136,13 @@
   .box-1 p, .box-2 p, .box-3 p, .box-4 p {
     font-size: 16px;
   }
-  .cta-1-btn, .cta-2-btn {
-    padding: 10px 0;
-    width: 140px;
-    font-size: 15px;
-  }
+
 }
-/* =================watch-MOBILE RESPONSIVE ================= */
+/* =================Watch-card ================= */
 @media (max-width: 768px) {
   .watch-content {
-    height: 65vh;
+    min-height: 66vh;
+    height: auto;
     padding: 20px 15px;
     background-position: center top;
   }
@@ -1172,3 +1165,157 @@
     font-size: 15px;
   }
 }
+/* -------------- Scroll-card------------------ */
+@media (max-width: 768px) {
+  .main-title h2 {
+    font-size: 22px;
+    padding-left: 20px;
+  }
+  .card-container {
+    padding-left: 30px;
+    padding-right: 30px;
+    gap: 18px;
+  }
+  .card {
+    width: 280px;
+    height: 340px;
+  }
+.card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  .Buy-item {
+    top: 20px;
+    left: 30px;
+    gap: 4px;
+  }
+  .Buy-item h3 {
+    font-size: 21px;
+    font-weight: 600;
+  }
+  .Buy-item p {
+    font-size: 13px;
+  }
+  .Buy-item span {
+    font-size: 13px;
+  }
+  .card-info {
+    bottom: -10px;
+    left: 12px;
+    right: 12px;
+    padding: 10px 12px;
+    border-radius: 14px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+    opacity: 0;
+     transition: bottom .32s ease, opacity .22s ease;
+  }
+  .card.active .card-info {
+    bottom: 8px;            
+    opacity: 1;
+  }
+  .card-info h2 {
+    font-size: 14px;
+    margin: 0 0 6px;
+  }
+  .card-info p {
+    font-size: 12px;
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+  .price {
+    font-size: 14px;
+  }
+  .add-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 10px;
+  }
+  .slide-btn {
+   display: none;
+}
+}
+/* -------------- Sliding-card------------------ */
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 22px;
+    margin-top: 70px;
+    padding: 0 16px;
+  }
+  .slider-track {
+    overflow: hidden;        
+    touch-action: none;     
+    overscroll-behavior: none;
+    padding: 16px 30px;
+    gap: 20px;
+  }
+  .product-card {
+    width: 70vw;
+    max-width: 280px;
+    height: 340px;
+    border-radius: 20px;
+  }
+  .card-top-inside h3 {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.25;
+  }
+  .card-top-inside p {
+    font-size: 12px;
+  }
+  .card-top-inside span {
+    font-size: 10px;
+  }
+}
+/* -------------- Video play-card ------------------ */
+@media (max-width: 768px) {
+  .tv-main-title {
+    font-size: 28px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    line-height: 1.2;
+  }
+  .video-wrapper {
+    margin-bottom: 80px;
+  }
+  .feature-video {
+    width: 95%;
+    height: auto;              
+    aspect-ratio: 16 / 9;      
+    border-radius: 14px;
+  }
+}
+/* -------------- Music-card ------------------ */
+@media (max-width: 768px) {
+  .colo-display {
+    margin-bottom: 40px;
+    padding: 0 16px;
+  }
+  .col-card {
+    width: 100%;
+    height: 220px;
+    padding: 20px;
+    gap: 16px;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .icon {
+    width: 120px;
+    flex-shrink: 0; 
+  }
+  .col-content {
+    flex: 1;
+    text-align: left;
+  }
+  .col-content h2 {
+    font-size: 18px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+  .music-btn {
+    font-size: 12px;
+    padding: 10px 18px;
+  }
+}
+
