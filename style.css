@@ -1096,9 +1096,7 @@
 /* ================= HERO MOBILE RESPONSIVE ================= */
 @media (max-width: 768px) {
   .hero-content {
-    min-height: 100vh;
-    height: auto;
-    padding: 32px 16px;
+    min-height: 98.5vh;
     background-position: center top;
     background-image: none;
     overflow: hidden;
@@ -1343,3 +1341,4 @@
     padding: 10px 18px;
   }
 }
+
