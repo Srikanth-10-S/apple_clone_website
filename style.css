@@ -479,7 +479,6 @@
 .main,
 .outer {
   display: flex;
-  margin: 5px;
 }
 /* ----- COMMON-BOX ----- */
 .box-1, .box-2, .box-3, .box-4 {
@@ -487,7 +486,7 @@
   height: 70vh;
   background-size: cover;
   background-position: center;
-  margin: 5px;
+  margin: 3px;
   text-align: center;
   padding-top: 30px;
   border-radius: 8px;
@@ -1342,5 +1341,6 @@
     padding: 10px 18px;
   }
 }
+
 
 
