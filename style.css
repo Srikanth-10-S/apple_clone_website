@@ -1097,9 +1097,11 @@
 @media (max-width: 768px) {
   .hero-content {
     min-height: 98.5vh;
+    height: auto;
     background-position: center top;
     background-image: none;
     overflow: hidden;
+    margin-bottom: 18px;
   }
    .bg-video {
     display: block;
