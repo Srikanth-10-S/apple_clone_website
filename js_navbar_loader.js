@@ -7,4 +7,11 @@ fetch("Navbar.html")
     initDropdown();   // mega menu
     initSearch();     // search dropdown
     initBag();        // bag dropdown
+    initHamburger();  // side menu
   });
+
+
+
+
+
+
