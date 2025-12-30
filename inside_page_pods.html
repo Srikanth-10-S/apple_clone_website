@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Watch ultra Apple (IN)</title>
-  <!-- Boxicons CDN -->
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,0&icon_names=delivery_truck_speed" />
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>AirPods Pro 3 Apple (IN)</title>
 
-  <style>
-/* ------------------ GLOBAL ------------------ */
-*{
+     <!-- Boxicons CDN -->
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,0&icon_names=delivery_truck_speed" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+<style>
+
+/* ---------------------- STYLE-CSS --------------------------------------- */
+
+* {
  margin:0; 
  padding:0;
-box-sizing:border-box;
+ box-sizing:border-box;
  font-family:-apple-system, BlinkMacSystemFont, "SF Pro Text", 
  "SF Pro Display", Arial, sans-serif;
 }
 
-/* ---------- Header / Nav ---------- */
+/* ---------------------- TOP-NAVBAR-SECTION ---------------------------------- */
+
 .nav {
   width: 100%;
   background: #fff;
@@ -35,7 +39,7 @@ box-sizing:border-box;
   align-items: center;
   justify-content: space-between;
 }
-/* CENTER AREA ALLOWED TO EXPAND */
+/*---- CENTER AREA ALLOWED TO EXPAND ----*/
 .nav-center {
   flex: 1;
   display: flex;
@@ -60,18 +64,18 @@ box-sizing:border-box;
 .nav-list li a i {
   font-size: 14px;
 }
-/* SEARCH + BAG ICONS */
+/*---- SEARCH + BAG ICONS ----*/
 .nav-action i {
   color: #000;
   font-size: 15px;
   margin-left: 18px;
   cursor: pointer;
 }
-/* Mobile apple hidden on desktop */
+/*----- Mobile apple hidden on desktop---*/
 .mobile-apple {
   display: none;
 }
-/* Hamburger (2 lines) */
+/*---- Hamburger ----*/
 .menu-btn {
   display: none;
   width: 16px;
@@ -88,13 +92,12 @@ box-sizing:border-box;
   background: #636161;
   border-radius: 2px;
 }
-/* Right icons alignment */
+/*----- Right icons alignment ----*/
 .nav-action {
   display: flex;
   align-items: center;
 }
-
-/* Dropdown hidden by default */
+/*----  Dropdown hidden by default  -----*/
 .dropdown-menu {
   position: fixed;
   top: 0; 
@@ -104,7 +107,7 @@ box-sizing:border-box;
   border-bottom: 1px solid #ddd;
   padding: 70px 25%;
   display: none;
-  z-index: 999; 
+  z-index: 999;  
 }
 /*--- Blur strip only at bottom ---*/
 .dropdown-menu::after {
@@ -123,8 +126,7 @@ box-sizing:border-box;
 .dropdown-menu.show {
     display: flex;
     opacity: 1;
-    transform: translateY(0);
-   
+    transform: translateY(0); 
 }
 .menu-panel{
     display: flex;
@@ -159,7 +161,7 @@ box-sizing:border-box;
     color: #888;
 }
 
-/*---------Search Dropdown---- */
+/*---- SEARCH-DROPD-DOWN ---- */
 .search-dropdown {
   position: fixed;
   top: 0; 
@@ -171,19 +173,19 @@ box-sizing:border-box;
   display: none;
   z-index: 999;
 }
-  .search-dropdown::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      top: 100%;
-      height: 460px; /* strip height */
-      background: rgba(255, 255, 255, 0.608);
-      backdrop-filter: blur(30px);
-      -webkit-backdrop-filter: blur(30px);
-      pointer-events: none;
-    }
+ .search-dropdown::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  top: 100%;
+  height: 470px; /* strip height */
+  background: rgba(255, 255, 255, 0.708);
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+  pointer-events: none;
+}
 .search-dropdown.active {
   display: block;
 }
@@ -212,23 +214,6 @@ box-sizing:border-box;
 }
 .search-quick-links a:hover {
   text-decoration: underline;
-}
-/* add to bag */
-.nav-action {
-  position: relative;
-}
-.bag-count {
-  position: absolute;
-  bottom: -2px; 
-  right: -4px;
-  background: #000;
-  color: #fff;
-  font-size: 9px;
-  font-weight: 600;
-  padding: 2px 5px;
-  border-radius: 12px;
-  display: none;
-  line-height: 1;
 }
 /* --- BAG ICON --- */
 .bag-wrapper {
@@ -384,7 +369,8 @@ box-sizing:border-box;
   background-color: #005bb5;
 }
 
-/* ============================= MAIN BUY SECTION ============================= */
+/* ---------------------- MAIN-HERO-SECTION ---------------------------------- */
+
 .buy-section {
   width: 100%;
   display: flex;
@@ -420,39 +406,12 @@ box-sizing:border-box;
 .learn:hover {
   text-decoration: underline;
 }
-@media (max-width: 768px) {
-  .buy-section {
-    flex-direction: column;
-    padding: 32px 20px;
-    padding-top: 100px;
-  }
-  .buy-left {
-    width: 100%;
-  }
-  .buy-left h1 {
-    font-size: 26px;
-    line-height: 1.25;
-    margin-bottom: 10px;
-  }
-  .buy-price {
-    font-size: 15px;
-    line-height: 1.4;
-    margin-bottom: 14px;
-  }
-  .ai {
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-  .ai-title,
-  .learn {
-    font-size: 12px;
-  }
-}
 
-/* ============================= PRODUCT DETAILS SECTION ============================= */
+/* ---------------------- PRODUCT-DETAILS-SECTION ---------------------------------- */
+
 .product-details {
   width: 100%;
-  padding: 8px 10%;
+  padding: 50px 10%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -463,7 +422,7 @@ box-sizing:border-box;
 }
 .product-details .buy-left img {
   width: 100%;
-  max-width: 460px;
+  max-width: 430px;
   border-radius: 20px;
   display: block;
 }
@@ -571,43 +530,72 @@ box-sizing:border-box;
 .small-card img {
   width: 100%;
   height: 100%;
+
 }
 
-/* ============================= whats in the box ============================= */
-.whats-in-box {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 120px;
-    margin-top: 25px;
+/* ---------------------- PRODUVT-INFO-SECTION ---------------------------------- */
+
+.product-info-section {
+  width: 100%;
+  padding: 25px 8%;
+  background: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
 }
-.whats-in-box h2 {
-    font-size: 38px;
-    font-weight: 600;
-    margin-bottom: 50px;
+.main-title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 40px;
 }
+.info-row {
+  display: flex;
+  width: 100%;
+  margin-bottom: 50px;
+}
+.info-left {
+  width: 40%;
+}
+.info-left h3 {
+  font-size: 22px;
+  font-weight: 600;
+}
+.info-right {
+  width: 70%;
+}
+.product-desc {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #444;
+}
+.desc-divider {
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+/* WHAT'S IN THE BOX */
 .box-items {
-    display: flex;
-    justify-content: center;    
+  padding: 40px 120px;
 }
-.box-card {
-    text-align: center;
+.box-items h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
 }
-/* --- All 3 images same size --- */
-.box-card img {
-     width: 450px;
-     height: 350px;
-    object-fit: contain;
-     display: block;
-     margin: 0 auto;
-      background-color: #F5F5F7;
-}
-.box-card p {
-    margin-top: 16px;
-    font-size: 16px;
-    font-weight: 400;
+.box-items ul li {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #333;
 }
 
-/* ============================= COMPARE TITLE ============================= */
+/* ---------------------- DIVIDER-LINE---------------------------------- */
+
+.divider {
+  width: 80%;
+  margin: 30px auto;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+/* ---------------------- AIRPODS-CARDS-SECTION ---------------------------------- */
+
 .compare-title {
   text-align: center;
   padding: 20px 0;
@@ -615,98 +603,43 @@ box-sizing:border-box;
 .compare-title h2 {
   font-size: 34px;
   font-weight: 700;
-  padding-bottom: 22px;
-
-}
-.compare-title a{
-    text-decoration: none;
-    color: #0071e3;
-}
-.compare-title a:hover{
-    text-decoration: underline;
 }
 
-
-/* ============================= Watch CARDS ============================= */
-.iphone-compare {
-  background: #fff;
-  margin-bottom: 90px;
-}
-.compare-title {
-  align-items: center;
-  margin-bottom: 50px;
-}
-.compare-title h2 {
-  font-size: 35px;
-  font-weight: 600;
-}
-.compare-title a {
-  color: #0071e3;
-  text-decoration: none;
-  font-size: 16px;
-}
-.iphone-cards {
+.airpods-cards {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  gap: 60px;
-  flex-wrap: wrap;
+  gap: 40px;
+  padding: 40px 120px;
 }
-.iphone-card {
-  width: 280px;
-  text-align: center;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.img-box {
- width: 240px;
-  height: 280px;
-  border-radius: 18px;
+.card {
+  width: 260px;
+  padding: 20px;
   border: 1px solid #ddd;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 18px;
+  text-align: center;
+  transition: 0.3s ease;
+  cursor: pointer;
 }
-.img-box img {
-    width: 95%;
-  height: auto;
-}
-.img-box:hover{
-   transform: translateY(-6px);
+.card:hover {
+  transform: translateY(-6px);
   box-shadow: 0 10px 28px rgba(0,0,0,0.1);
 }
-.color-dots {
-  margin-top: 15px;
-  display: flex;
-  justify-content: center;
-  gap: 8px;
+.card img {
+  width: 180px;
+  margin-bottom: 15px;
 }
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  display: inline-block;
-  border: 1px solid #ccc;
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  font-weight: 600;
 }
-.color1 { background: #000; }
-.color2 { background: #d1d1d1; }
-.color3 { background: #b5651d; }
-.iphone-card h3 {
-  margin-top: 15px;
+.card-price {
   font-size: 18px;
-  font-weight: 500;
-}
-.prices {
-  font-size: 14px;
   color: #555;
-  margin-top: 5px;
 }
 
-/* =======================Apple video Ads=========================== */
+/* ---------------------- VIDEO-PLAY-SECTION ---------------------------------- */
+
 .tv-main-title {
   text-align: center;
   font-size: 50px;
@@ -731,7 +664,9 @@ box-sizing:border-box;
   box-shadow: 0 12px 30px rgba(0,0,0,0.20);
   border-radius: 8px;
 }
-/* =======================Footer section =========================== */
+
+/* ---------------------- FOOTER-SECTION ---------------------------------- */
+
 .apple-footer {
   background: #f5f5f7;
   padding: 60px 0 30px;
@@ -770,10 +705,12 @@ box-sizing:border-box;
   text-decoration: underline;
 }
 
-/* ----------------- Mobile responsive Code --------------------------------*/
+/* ----------- Mobile Responsive Code -------------- */
 
-/* ----------------- Nav-Bar --------------------------------*/
+/* -------------- Nav-Bar ------------------ */
 @media (max-width: 900px) {
+  /* Hide desktop center nav */
+   /* hide menu by default */
   .nav-list {
     position: fixed;
     top: 0px;
@@ -784,7 +721,7 @@ box-sizing:border-box;
     gap: 0;
     display: none;
     padding: 12px 0;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   }
    .nav {
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
@@ -825,11 +762,11 @@ box-sizing:border-box;
     justify-content: space-between;
   }
 }
-/* ----------------- Main Buy --------------------------------*/
+/* -------------- Main Buy ------------------ */
 @media (max-width: 768px) {
   .buy-section {
     flex-direction: column;
-    padding: 0px 20px;
+    padding: 20px 20px;
     padding-top: 79px;
   }
   .buy-left {
@@ -854,134 +791,111 @@ box-sizing:border-box;
     font-size: 12px;
   }
 }
-/* ----------------- Product Details --------------------------------*/
+/* -------------- Product details below img------------------ */
 @media (max-width: 768px) {
-  /* Main layout */
   .product-details {
     flex-direction: column;
     padding: 32px 20px;
     gap: 40px;
   }
-  /* Left image */
-  .product-details .buy-left {
+  .product-details .buy-left,
+  .product-details .buy-right {
     width: 100%;
+  }
+  .product-details .buy-left {
     display: flex;
     justify-content: center;
   }
   .product-details .buy-left img {
     max-width: 320px;
-    border-radius: 16px;
-  }
-  /* Right content */
-  .product-details .buy-right {
-    width: 100%;
-  }
-  .new-badge {
-    font-size: 12px;
-    padding: 4px 12px;
   }
   .intro-title {
-    font-size: 28px;
+    font-size: 30px;
     line-height: 1.2;
   }
   .intro-desc {
     font-size: 14px;
     max-width: 100%;
   }
-  /* Delivery box */
   .delivery-box {
     padding: 18px;
   }
-  .delivery-row {
-    gap: 12px;
-  }
-  .icon {
-    width: 22px;
-  }
-  .title {
-    font-size: 14px;
-  }
-  .sub {
-    font-size: 12px;
-  }
-  /* Price & button */
   .price {
-    font-size: 20px;
-    margin-top: 24px;
+    font-size: 22px;
   }
-  .tax-info {
-    font-size: 13px;
-  }
-  .Check-outbtn {
-    font-size: 15px;
-    padding: 14px 0;
-  }
-  /* Bottom cards */
+}
+/* -------------- Product Details ------------------ */
+@media (max-width: 768px) {
   .small-card-container {
     margin-top: 40px;
     margin-bottom: 60px;
-  }
-  .small-card-list {
-    overflow-x: auto;
-    justify-content: flex-start;
-    gap: 12px;
-    padding: 0 10px;
-  }
-  .small-card {
-    min-width: 140px;
-  }
-}
-/* ----------------- What is in Box --------------------------------*/
-@media (max-width: 768px) {
-  .whats-in-box {
-    margin-top: 60px;
-    margin-bottom: 80px;
-    padding: 0 20px;
-
-  }
-  .whats-in-box h2 {
-    font-size: 26px;
-    margin-bottom: 32px;
-  }
-  .box-items {
-    align-items: center;
-  }
-  .box-card img {
-    width: 100%;
-    max-width: 400px;
-    height: 163px;
-    background-color: #F5F5F7;
-  }
-  .box-card p {
-    font-size: 14px;
-    margin-top: 12px;
-  }
-}
-/* ----------------- watch cards --------------------------------*/
-@media (max-width: 768px) {
-  .compare-title {
-    text-align: center;
-    padding: 0 20px;
-  }
-  .compare-title h2 {
-    font-size: 26px;
-  }
-  .compare-title a {
-    font-size: 14px;
-  }
-  .iphone-cards {
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
     padding: 0 16px;
   }
-  .iphone-card {
-    width: 100%;
-    max-width: 340px;
+  .small-card-list {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 10px;
+    -webkit-overflow-scrolling: touch;
   }
-  .img-box {
-    width: 200px;
-    height: 240px;
+  .small-card {
+    flex: 0 0 140px;
+  }
+  .small-card-list::-webkit-scrollbar {
+    display: none; /* Apple style */
+  }
+}
+/* -------------- OverView ------------------ */
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  .info-row {
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+  .info-left,
+  .info-right {
+    width: 100%;
+  }
+  .info-left h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .product-desc {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .desc-divider {
+    margin: 16px 0;
+  }
+}
+/* -------------- AirPods-Cards ------------------ */
+@media (max-width: 768px) {
+  .compare-title h2 {
+    font-size: 22px;
+  }
+  .airpods-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 16px;
+    gap: 24px;
+  }
+  .card {
+    width: 100%;
+    max-width: 210px;
+  }
+   .card img {
+    width: 120px;
+    margin-bottom: 12px;
+  }
+  .card h3 {
+    font-size: 18px;
+  }
+  .card-price {
+    font-size: 16px;
   }
 }
 /* -------------- Video-card ------------------ */
@@ -1011,133 +925,147 @@ box-sizing:border-box;
 
 <div id="navbar"></div>
 
- <!----------------------------- MAIN-HERO-SECTION -------------------------------------->
+<!----------------------------- MAIN-HERO-SECTION -------------------------------------->
 
 <section class="buy-section">
       <div class="buy-left">
-      <h1>Buy Watch Ultra 3</h1>
-      <p class="buy-price">From ₹12,317.00/mo.<br>with instant cashback and No Cost EMI</p>
-        <div class="ai">
-        <span class="ai-title">Apple Intelligence</span>
-        <a href="#" class="learn">Learn more</a>
-        </div>
+      <h1>Buy AirPods Pro 3</h1>
+      <p class="buy-price">From ₹9,317.00/mo.<br>with instant cashback and No Cost EMI</p>
+          <div class="ai">
+          <span class="ai-title">Apple Intelligence</span>
+           <a href="#" class="learn">Learn more</a>
+       </div>
     </div>
 </section>
 
- <!----------------------------- PRODUCT-DETAILS-SECTION -------------------------------------->
+<!----------------------------- PRODUCT-DETAILS-SECTION -------------------------------------->
 
 <section class="product-details">
-         <div class="buy-left">
-         <img src="https://i.pinimg.com/474x/9e/b9/0a/9eb90a9e27fa30b6095d521174acc8de.jpg" alt="MacBook Air" class="main-product-img">
-     </div> 
-         <div class="buy-right">
-         <span class="new-badge">New</span>
-         <h1 class="intro-title">Buy Watch Ultra 3</h1>
-         <p class="intro-desc">
-           Now with the world's best in-ear Active Noise Cancellation,
-           all-new heart rate sensing,and up to 8 hours of battery life.</p>
+      <div class="buy-left">
+      <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MME73?wid=1200&hei=1200&fmt=jpeg&qlt=95&.v=1632861342000" alt="AirPods Pro 3" class="main-product-img">
+    </div> 
+       <div class="buy-right">
+       <span class="new-badge">New</span>
+       <h1 class="intro-title">Buy AirPods Pro 3</h1>
+       <p class="intro-desc">
+        Now with the world's best in-ear Active Noise Cancellation,
+        all-new heart rate sensing,and up to 8 hours of battery life.
+        </p>
 <!-- Apple Grey Box -->
         <div class="delivery-box">
         <div class="delivery-row">
         <span class="material-symbols-outlined">delivery_truck_speed</span>
         <div>
-            <p class="title">Delivers to 560017</p>
-            <p class="sub">Order by 4:00 pm — Tomorrow (Free Delivery)</p>
-          </div>
+        <p class="title">Delivers to 560017</p>
+        <p class="sub">Order by 4:00 pm — Tomorrow (Free Delivery)</p>
+       </div>
       </div>
           <div class="delivery-row">
           <img src="https://img.icons8.com/ios-filled/50/000000/shop.png" class="icon">
-          <div>
+        <div>
             <p class="title">Order Now. Pick up in store:</p>
             <p class="sub">Today</p>
           </div>
-      </div>
+       </div>
 <!-- price Section -->
-      <p class="price" data-price="80900">₹80,900</p>
+      <p class="price" data-price="25900">₹25,900</p>
       <p class="tax-info">(Incl. of all taxes)</p>
 <!-- BUY BUTTON -->
-        <button class="Check-outbtn" onclick="addToBag(this)">Add to bag</button>  
-    </div>  
+            <button class="Check-outbtn" onclick="addToBag(this)">Add to bag</button>  
+       </div>  
 </section>
 
-<!----------------------------- INSIDE-ITEMS-SECTION -------------------------------------->
+<div class="small-card-container">
+    <ul class="small-card-list">
+         <li class="small-card"><img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-pro-3-thumb-1-202509?wid=282&hei=240&fmt=jpeg&qlt=90&.v=ZEN5L1ZLampHMG81Vmt6cUxySXA5QU5HN1ptNDZlOWh1UU55TmpKaTFGWlFtQUk3aUJ5NlJiVnd4bFY5ZW9YR014MXJScFRZN3Y5OWZsRXVrN1k4cFpsZ3JtVjc2Y0dhSER0M2RiMGxBeXM" alt="Card 1"></li>
+         <li class="small-card"><img src="https://i.pinimg.com/736x/bf/ff/68/bfff68827323ef96f13dd7c84465f127.jpg" alt="Card 1"></li>
+         <li class="small-card"><img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-pro-3-thumb-3-202509?wid=282&hei=240&fmt=jpeg&qlt=90&.v=ZEN5L1ZLampHMG81Vmt6cUxySXA5SVExTG00OG94dG1aNS92UzJ5bVM5OVFtQUk3aUJ5NlJiVnd4bFY5ZW9YR014MXJScFRZN3Y5OWZsRXVrN1k4cGR1eUREOTIvOWxvaXNUOHI1Y0k4MWc" alt="Card 1"></li>
+         <li class="small-card"><img src="https://i.pinimg.com/1200x/7d/46/85/7d4685a2907f6132a2b102405aaccb1e.jpg" alt="Card 1"></li>
+         <li class="small-card"><img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-pro-3-thumb-5-202509?wid=282&hei=240&fmt=jpeg&qlt=90&.v=ZEN5L1ZLampHMG81Vmt6cUxySXA5T3hJOWVyTVFmdXR4a1h0cUN0dGdvSlFtQUk3aUJ5NlJiVnd4bFY5ZW9YR014MXJScFRZN3Y5OWZsRXVrN1k4cGNYUVRDTUdzbnpCUFY3QmM5bU1TWDg" alt="Card 1"></li> 
+    </ul>
+</div>
 
-<section class="whats-in-box">
-        <h2>What's in the Box</h2>
-        <div class="box-items">
-        <div class="box-card">
-            <img src="https://img-prd-pim.poorvika.com/prodvarval/38970-yellow.png" alt="Item 1">
-            <p>Watch Ultra 3</p>
-      </div>
-            <div class="box-card">
-            <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-pro-witb-cable-202509?wid=200&hei=784&fmt=jpeg&qlt=90&.v=NXh3OEZPWW1IYUpzT1hwc0dnVnRpK1dSeStNUXE3aFJTdDBJY05QakRaNFI1QWRzV2xzQm9nZ1NuNTUvc25WWTE1UUxLT2t0cW42N3FvQzVqaGhrVVdCeVUvRjIzUllMVmw3WG0zemU5QnArYWpGdS9XeFgvbS9ITnNYOEhYaG4" alt="Item 2">
-            <p>USB-C Charge Cable</p>
-        </div>
-     </div>
+<!----------------------------- DIVIDER-LINE -------------------------------------->
+
+<hr class="divider">
+
+<!----------------------------- PRODUCT-INFO-SECTION -------------------------------------->
+
+<section class="product-info-section">
+       <h2 class="main-title">Product Information</h2>
+  <!-- ROW 1 : OVERVIEW  -->
+      <div class="info-row">
+    <!-- LEFT TITLE -->
+      <div class="info-left">
+      <h3>Overview</h3>
+    </div>
+<!-- RIGHT CONTENT -->
+    <div class="info-right">
+      <p class="product-desc">
+        <strong>AirPods Pro 3</strong><br>
+        Experience breathtaking sound quality with the world's best in-ear Active Noise Cancellation. 
+        Built-in heart rate sensing lets you track your heart rate and calories burned during workouts. 
+        And AirPods Pro 3 bring advancements in hearing health.
+      </p>
+      <hr class="desc-divider">
+    </div>
+  </div>
+<!-- ROW 2 : WHAT'S IN THE BOX -->
+    <div class="info-row">
+<!-- LEFT TITLE -->
+    <div class="info-left">
+    <h3>What's in the Box</h3>
+    </div>
+<!-- RIGHT CONTENT -->
+     <div class="info-right">
+     <p class="product-desc">
+      <strong>AirPods Pro 3</strong><br>
+      MagSafe Charging Case (USB-C) with speaker and lanyard loop<br>
+      Silicone ear tips (five sizes: XXS, XS, S, M, L)<br>
+      Documentation
+     </p>
+    </div>
+  </div>
 </section>
 
-<!----------------------------- WATCH-SECTION -------------------------------------->
+<!----------------------------- DIVIDER-LINE -------------------------------------->
 
- <section class="iphone-compare">
-       <div class="compare-title">
-       <h2>Which Watch is right for you?</h2>
-       <a href="#">See which Watch is right for you ></a>
+<hr class="divider">
+
+<!----------------------------- AIRPODS-CARDS-SECTION -------------------------------------->
+
+ <section class="airpods-compare">
+  <div class="compare-title">
+    <h2>Which AirPods are right for you?</h2>
+  </div>
+  <div class="airpods-cards">
+  <div class="card">
+    <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-4-down-compare-202409?wid=420&hei=500&fmt=jpeg&qlt=90&.v=ZXRUMUVvUDYrWGRPb1p5T2Q2TWV5c0s2Ym10NllyT1YxL1B0ck1mTlQyWmZoWEFrZzZyNzRKRU1rc296ejZTN3VUb3VPa2FUZVhQMFhDQnVBMWhwQStYMW5mVVZNSWRMTXRCT3QvUkZqa3c" alt="">
+    <h3>AirPods (3rd Gen)</h3>
+    <p class="card-price">From ₹19,900</p>
   </div>
 
-  <div class="iphone-cards">
-<!-- CARD 1 -->
-    <div class="iphone-card">
-      <div class="img-box">
-        <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/watch-compare-s11-202509?wid=520&hei=520&fmt=jpeg&qlt=90&.v=dWNxM2FBcWh6K3lqd1ZDZ0J0SmQzekFLdnpTWVk5T2JjWkxmaUh4TE96K0Fhc0dPaExJNGphZ3FWVWlwSk9MUjd1Z1M3bThWSUVZMVcrMUZmTjBCLzQ3emJ1eTV0WHMvNWc0cG1uZVhXdEU" alt="">
-      </div>
-      <!-- COLORS -->
-      <div class="color-dots">
-        <span class="dot color1"></span>
-        <span class="dot color2"></span>
-        <span class="dot color3"></span>
-      </div>
-      <h3>Apple Watch Series 11</h3>
-      <p class="prices">From ₹46,900</p>
-    </div>
-
-<!-- CARD 2 -->
-      <div class="iphone-card">
-      <div class="img-box">
-        <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/watch-compare-se-202509?wid=520&hei=520&fmt=jpeg&qlt=90&.v=eEpjZGlsbzI4YmtuR2pKQXNDTzZ5eThnZFRkdzMwY2NsY2I5Y3NQL214QzM2dk9rVWpEampSQXBqK3dUclB1WEdjSkVFV1FxeHRkZDFvRXAwaDZkVGRCVnRkbnoxcUU4aG9vT2t1SVBnd28" alt="">
-    </div>
-      <div class="color-dots">
-        <span class="dot color1"></span>
-        <span class="dot color2"></span>
-        <span class="dot color3"></span>
-      </div>
-      <h3>Apple Watch Series SE</h3>
-      <p class="prices">From ₹25,900</p>
-    </div>
-
-<!-- CARD 3 -->
-      <div class="iphone-card">
-      <div class="img-box">
-        <img src="https://i.pinimg.com/1200x/45/6a/66/456a66fb5bdbba3a07d231fc9accf59a.jpg" alt="">
-      </div>
-      <div class="color-dots">
-        <span class="dot color1"></span>
-        <span class="dot color2"></span>
-        <span class="dot color3"></span>
-      </div>
-      <h3>Apple Watch ultra 3Pro</h3>
-      <p class="prices">From ₹94,900</p>
-    </div>
+  <div class="card">
+    <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-pro-compare-202509?wid=420&hei=500&fmt=png-alpha&.v=ZnlNck16RHdFMkxPbVgyckcxQ295SWM5dW4ramo4RThZRWNFZVlDZWt2eWVJSDByU2tYV1Z4NFlUcXB5aTNyak1ySFlEMWZsaHZ3bk91K3Q3TFkySTQ2WjliOWFwaXZhT05WYkFaRnhkbFE" alt="">
+    <h3>AirPods Pro (2nd Gen)</h3>
+    <p class="card-price">From ₹24,900</p>
   </div>
+
+  <div class="card">
+    <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-compare-202409?wid=420&hei=500&fmt=jpeg&qlt=90&.v=MGJ3WGNoS1hJZng5ZTNiUkNNckE1WUNLYUZJYzNlb2M5YWlUSmxDUFM0VU1zMnAyYWJvaWNXR0hyZHB2dmJDMmdsbGZlRHV0Q3JlbHJxWXRlWjZpMnFLMWZobVVoS25GeGxET3FhTGFDUFE" alt="">
+    <h3>AirPods Max</h3>
+    <p class="card-price">From ₹49,900</p>
+  </div>
+
 </section>
 
 <!----------------------------- VIDEO-PLAY-SECTION -------------------------------------->
 
-<h1 class="tv-main-title"> Watch, sing and play. <br>On the big screen.
-</h1>
-       <div class="video-wrapper">
-       <video class="feature-video" width="800" height="450" autoplay loop muted playsinline >
-       <source src="video_watch.mp4" type="video/mp4">
-       </video>
+<h1 class="tv-main-title"> Watch, sing and play. <br>On the big screen.</br></h1>
+<div class="video-wrapper">
+  <video class="feature-video" width="800" height="450" autoplay loop muted playsinline >
+    <source src="video_airpod.mp4" type="video/mp4">
+  </video>
 </div>
 
 <!----------------------------- FOOTER-SECTION -------------------------------------->
