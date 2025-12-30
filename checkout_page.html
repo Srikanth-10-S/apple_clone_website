@@ -27,7 +27,7 @@ body{
   font-weight: 500;
   color: #1d1d1f;
   margin-top: 28px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 /* ---------- CHECKOUT LAYOUT ---------- */
@@ -108,7 +108,7 @@ body{
   align-items:flex-start;
 }
 .summary-row.total span:first-child{
-  font-size:30px;
+  font-size:27px;
   font-weight:500;
 }
 .total-right{
@@ -129,7 +129,7 @@ body{
 .checkout-btn{
   margin-top:16px;
   padding:14px 65px;
-  border-radius:14px;
+  border-radius:10px;
   background:#0071e3;
   color:#fff;
   border:none;
@@ -359,7 +359,130 @@ body{
   font-weight: 600;
   color: #1d1d1f;
 }
+/* -------------- MOBILE-RESPONSIVE CODE -----------------------------*/
 
+/* -------------- ITEMS SECTION -----------------------------*/
+@media (max-width: 768px) {
+  .checkout-wrapper {
+    padding: 12px;
+  }
+  .checkout-box {
+    width: 100%;
+    padding: 16px;
+  }
+  /* Cart item stays left-right */
+  .cart-item {
+    padding: 12px 0;
+  }
+  .cart-left img {
+    width: 60px;
+    height: 60px;
+  }
+  .cart-name {
+    font-size: 14px;
+  }
+  .cart-qty {
+    font-size: 12px;
+  }
+  .price {
+    font-size: 14px;
+  }
+  .remove-btn {
+    font-size: 12px;
+  }
+  /* Summary rows remain inline */
+  .summary-row {
+    font-size: 14px;
+  }
+  .summary-row.total span {
+    font-size: 12px;
+  }
+  .total-price {
+    font-size: 16px;
+  }
+  .checkout-btn {
+    padding: 11px;
+    font-size: 16px;
+  }
+  /* Empty checkout */
+  #emptyCheckout h2 {
+    font-size: 18px;
+  }
+  .empty-actions .checkout-btn {
+    padding: 12px;
+    font-size: 14px;
+  }
+  .empty-actions .checkout-btn {
+    min-width: 120px;
+    padding: 14px 14px;
+    text-align: center;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+}
+/* ------------------- YOU MAY ALSO LIKE -------------- */
+@media (max-width: 768px) {
+  .recommend-card-wrapper {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .recommend-grid {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .recommend-card {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .recommend-card img {
+    width: 60%;
+    height: auto;
+  }
+  .show-more {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+/* -------------- NEW ARRIVAL CARD -----------------------------*/
+@media (max-width: 768px) {
+  .new-arrivals-section {
+    width: 100%;
+  }
+  .new-arrivals-overlay h2 {
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.new-arrivals-overlay p {
+    font-size: 9px;
+    color: #6e6e73;
+    margin-bottom: 18px;
+}  
+.shop-btn {
+    background: #0071e3;
+    color: #fff;
+    border: none;
+    padding: 10px 31px;
+    font-size: 15px;
+    border-radius: 22px;
+    cursor: pointer;
+}    
+  .new-arrivals-img {
+    width: 100%;
+    height: auto; 
+    min-height: 180px;  
+  }
+  .new-arrivals-overlay {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .order-popup {
+    padding: 16px;
+  }
+  .popup-card {
+    width: 100%;
+    max-width: 360px;
+  }
+}
 /* animation */
 @keyframes popupScale {
   from {
@@ -371,10 +494,8 @@ body{
     opacity: 1;
   }
 }
-
 </style>
 </head>
-
 <body>
 
 <!--------- Mian tittle ---------->
@@ -549,6 +670,7 @@ body{
     </div>
   </div>
 </div>
+
 
 <script>
 /* ---------- GET BAG ---------- */
