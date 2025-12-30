@@ -287,36 +287,31 @@ Support: [
   }
 ],
   }
-  /* ================= DROPDOWN INIT ================= */
+  
+  /* ================= DESKTOP DROPDOWN ================= */
   function initDropdown() {
     const dropdown = document.getElementById("mainDropdown");
     const content = document.getElementById("dropdownContent");
-    const nav = document.querySelector(".nav");
 
-    if (!dropdown || !content || !nav) return;
+    if (!dropdown || !content) return;
 
-    let active = null;
+    let activeMenu = null;
 
     document.querySelectorAll(".nav-item").forEach(item => {
       item.addEventListener("mouseenter", () => {
+        if (window.innerWidth <= 900) return;
+
         const key = item.textContent.trim();
-        if (active === key) return;
+        if (activeMenu === key || !MENU_DATA[key]) return;
 
-        const menu = MENU_DATA[key];
-        if (!menu) return;
+        activeMenu = key;
 
-        active = key;
-
-        content.innerHTML = menu.map(col => `
+        content.innerHTML = MENU_DATA[key].map(col => `
           <div class="${col.big ? "col-shop" : "col"}">
             <h4>${col.title}</h4>
             ${(col.items || []).map(i => {
-              if (Array.isArray(i)) {
-                return `<a href="${i[1]}">${i[0]}</a>`;
-              }
-              if (typeof i === "object") {
-                return `<a href="${i.link}">${i.label}</a>`;
-              }
+              if (Array.isArray(i)) return `<a href="${i[1]}">${i[0]}</a>`;
+              if (typeof i === "object") return `<a href="${i.link || '#'}">${i.label}</a>`;
               return `<a href="#">${i}</a>`;
             }).join("")}
           </div>
@@ -327,12 +322,12 @@ Support: [
     });
 
     dropdown.addEventListener("mouseleave", () => {
-      active = null;
+      activeMenu = null;
       dropdown.classList.remove("show");
     });
   }
 
-  /* ================= SEARCH INIT ================= */
+  /* ================= SEARCH ================= */
   function initSearch() {
     const searchIcon = document.getElementById("searchIcon");
     const searchDropdown = document.getElementById("searchDropdown");
@@ -353,9 +348,53 @@ Support: [
     });
   }
 
-  /* ================= INIT AFTER LOAD ================= */
+  /* ================= HAMBURGER  ================= */
+  function initHamburger() {
+    const menuBtn = document.querySelector(".menu-btn");
+    const navList = document.querySelector(".nav-list");
+    const dropdown = document.getElementById("mainDropdown");
+    const searchDropdown = document.getElementById("searchDropdown");
+
+    if (!menuBtn || !navList) {
+      return;
+    }
+
+    /* Toggle menu */
+    menuBtn.addEventListener("click", e => {
+      e.stopPropagation();
+
+      navList.classList.toggle("show");
+
+      dropdown?.classList.remove("show");
+      searchDropdown?.classList.remove("active");
+    });
+
+    /* Close on link click */
+    navList.querySelectorAll("li").forEach(li => {
+      li.addEventListener("click", () => {
+        if (window.innerWidth <= 900) {
+          navList.classList.remove("show");
+        }
+      });
+    });
+
+    /* Click outside */
+    document.addEventListener("click", e => {
+      if (
+        window.innerWidth <= 900 &&
+        !navList.contains(e.target) &&
+        !menuBtn.contains(e.target)
+      ) {
+        navList.classList.remove("show");
+      }
+    });
+  }
+
+  /* ================= INIT ================= */
   document.addEventListener("DOMContentLoaded", () => {
     initDropdown();
     initSearch();
+    initHamburger();
   });
+  
 }
