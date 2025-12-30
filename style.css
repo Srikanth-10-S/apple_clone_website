@@ -79,6 +79,7 @@ html, body {
   width: 100%;
   background: #636161;
   border-radius: 2px;
+  transition: 0.3s;
 }
 /*----- Right icons alignment ----*/
 .nav-action {
@@ -422,7 +423,6 @@ html, body {
   display: none;
 }
 /* ---------------------- IPHONE-AIR-SECTION ---------------------------------- */
-
 .Air-book {
   display: flex;
   justify-content: center;
@@ -1052,7 +1052,7 @@ html, body {
     flex-direction: column;
     gap: 0;
     display: none;
-    padding: 12px 0;
+    padding: 12px 12px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   }
    .nav {
@@ -1070,6 +1070,9 @@ html, body {
     flex: 1;
     display: flex;
     justify-content: right;
+  }
+  .nav-list.active {
+    display: flex;
   }
   /* Show mobile apple logo */
   .mobile-apple {
@@ -1365,4 +1368,40 @@ html, body {
     max-width: 100%;
     height: auto;
   }
+}
+/* ------------------- REVIEW BAG ANIMATION ----------------------- */
+.bag-preview-btn {
+  transition: 
+    transform 0.18s ease-out,
+    box-shadow 0.18s ease-out,
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+.bag-preview-btn:active {
+  transform:  scale(0.98);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.18);
+}
+/* ------------------- MAIN BUY BUTTON ANIMATION ----------------------- */
+.h2-btn {
+    transition: 
+    transform 0.18s ease-out,
+    box-shadow 0.18s ease-out,
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+.h2-btn:active {
+  transform:  scale(0.98);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.18);
+}
+/* ------------------- FLEX BUY BUTTON ANIMATION ----------------------- */
+.cta-2-btn {
+transition: 
+    transform 0.18s ease-out,
+    box-shadow 0.18s ease-out,
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+.cta-2-btn:active {
+  transform:  scale(0.98);
+  box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.18);
 }
