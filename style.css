@@ -7,7 +7,9 @@
      Roboto, "Helvetica Neue", Arial;
      line-height: 1.35;   
   }
-
+html, body {
+  overflow-x: hidden;
+}
 /* ---------------------- TOP-NAVBAR-SECTION ---------------------------------- */
 
 .nav {
@@ -370,6 +372,7 @@
   color: #fff; 
 }
 .hero-content {
+  position: relative;
   width: 100%;
   height: 80vh;
   background-image: url(https://www.apple.com/v/home/ci/images/heroes/iphone-17-pro/hero_iphone_17_pro__bknyzxfk2agi_medium.jpg);
@@ -662,10 +665,8 @@
   gap:30px;
   overflow-x:auto;
   scroll-behavior:smooth;
-  padding:20px;
+  padding:20px 90px;
   flex-wrap:nowrap;
-  padding-left: 90px;
-  padding-right: 90px;
 }
 .card-container::-webkit-scrollbar{
   display:none;
@@ -1121,7 +1122,7 @@
 /* =================iPhone-Air MOBILE RESPONSIVE ================= */
 @media (max-width: 768px) {
   .Air-content {
-    min-height: 100vh;
+    min-height: 90vh;
     height: auto;
     padding: 8px 16px;
     background-image: url(https://i.pinimg.com/1200x/43/bf/f2/43bff25ef7961e8ea39d796b3edd96cc.jpg);
@@ -1155,6 +1156,7 @@
     height: auto;
     border-radius: 0;
     margin-bottom: 5px;
+    margin-right: 0;
   }
   .box-1 h1, .box-2 h1, .box-3 h1, .box-4 h1 {
     font-size: 28px;
@@ -1203,8 +1205,8 @@
     padding-left: 20px;
   }
   .card-container {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 16px;
+    padding-right: 16px;
     gap: 18px;
   }
   .card {
@@ -1237,7 +1239,7 @@
     padding: 10px 12px;
     border-radius: 14px;
     box-shadow: 0 10px 24px rgba(0,0,0,0.18);
-    opacity: 0;
+    opacity: 1;
      transition: bottom .32s ease, opacity .22s ease;
   }
   .card.active .card-info {
@@ -1274,7 +1276,7 @@
   }
   .slider-track {
     overflow: hidden;        
-    touch-action: none;     
+    touch-action: pan-x;    
     overscroll-behavior: none;
     padding: 16px 30px;
     gap: 20px;
@@ -1364,4 +1366,3 @@
     height: auto;
   }
 }
-
