@@ -1,4 +1,4 @@
-    /* =============================== BAG JS CODE =============================== */
+/* =============================== BAG JS CODE =============================== */
 
 document.addEventListener("DOMContentLoaded", initBag);
 
@@ -7,7 +7,7 @@ function initBag() {
   const bagDropdown = document.getElementById("bagDropdown");
   const bagCount = document.getElementById("bagCount");
 
-  if (!bagDropdown) return;
+  if (!bagDropdown || !bagIcon) return;
 
   const bagPreviewImages = document.getElementById("bagPreviewImages");
   const emptyTitle = bagDropdown.querySelector(".empty-title");
@@ -25,13 +25,8 @@ function initBag() {
       localStorage.setItem("appleBag", JSON.stringify(this.items));
     },
 
-    /* ===============================
-       ADD ITEM
-    =============================== */
     add(newItem) {
-      const existing = this.items.find(
-        item => item.name === newItem.name
-      );
+      const existing = this.items.find(item => item.name === newItem.name);
 
       if (existing) {
         existing.qty += 1;
@@ -48,9 +43,6 @@ function initBag() {
       this.render();
     },
 
-    /* ===============================
-       RENDER BAG PREVIEW
-    =============================== */
     render() {
       bagPreviewImages.innerHTML = "";
 
@@ -81,7 +73,6 @@ function initBag() {
       const maxVisible = 3;
       const visibleItems = this.items.slice(0, maxVisible);
 
-      // SHOW ONLY FIRST 3 ITEMS
       visibleItems.forEach(item => {
         const div = document.createElement("div");
         div.className = "bag-preview-item";
@@ -97,7 +88,6 @@ function initBag() {
         bagPreviewImages.appendChild(div);
       });
 
-      // "+ MORE ITEMS" TEXT (BELOW LAST ITEM)
       let moreText = document.getElementById("bagMoreText");
       if (!moreText) {
         moreText = document.createElement("p");
@@ -109,11 +99,8 @@ function initBag() {
 
       if (extraCount > 0) {
         moreText.textContent =
-          ` ${extraCount} more item${extraCount > 1 ? "s" : ""} in your bag`;
-        moreText.style.display = "block";
+          `${extraCount} more item${extraCount > 1 ? "s" : ""} in your bag`;
         bagPreviewImages.appendChild(moreText);
-      } else {
-        moreText.style.display = "none";
       }
     }
   };
@@ -121,23 +108,23 @@ function initBag() {
   /* ===============================
      BAG TOGGLE
   =============================== */
-  if (bagIcon) {
-    bagIcon.addEventListener("click", e => {
-      e.stopPropagation();
-      bagDropdown.classList.toggle("active");
-    });
-  }
+  bagIcon.addEventListener("click", e => {
+    e.stopPropagation();
+    bagDropdown.classList.toggle("active");
+  });
 
   document.addEventListener("click", e => {
-    if (!bagDropdown.contains(e.target) && !bagIcon?.contains(e.target)) {
+    if (!bagDropdown.contains(e.target) && !bagIcon.contains(e.target)) {
       bagDropdown.classList.remove("active");
     }
   });
 
   /* ===============================
-     ADD TO BAG (BUTTON)
+     ADD TO BAG (TEXT + SHAKE)
   =============================== */
   window.addToBag = function (button) {
+    const originalText = button.innerText;
+
     const section = button.closest(".product-details");
     if (!section) return;
 
@@ -150,8 +137,25 @@ function initBag() {
       price
     };
 
+    // ADD ITEM
     AppleBag.add(item);
-    bagDropdown.classList.add("active");
+
+    // BUTTON TEXT FEEDBACK
+    button.classList.add("added");
+    button.innerText = "Item added";
+    button.disabled = true;
+
+    // SHAKE BAG ICON
+    bagIcon.classList.remove("bag-animate");
+    void bagIcon.offsetWidth;
+    bagIcon.classList.add("bag-animate");
+
+    // RESET BUTTON
+    setTimeout(() => {
+      button.classList.remove("added");
+      button.innerText = originalText;
+      button.disabled = false;
+    }, 1200);
   };
 
   AppleBag.render();
