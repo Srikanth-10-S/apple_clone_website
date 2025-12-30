@@ -478,19 +478,20 @@
 
 .main,
 .outer {
-  display: flex;
+    display: flex;
+    margin: 6px;
 }
 /* ----- COMMON-BOX ----- */
 .box-1, .box-2, .box-3, .box-4 {
-  width: 49%;
+  flex:1 1 49%;
   height: 70vh;
   background-size: cover;
   background-position: center;
-  margin: 3px;
   text-align: center;
   padding-top: 30px;
   border-radius: 8px;
   color: #000;
+  margin-right: 6px;
 }
 .box-1 { background-image: url(https://www.apple.com/v/home/ci/images/promos/airpods-pro-3/promo_airpodspro_3__f6xmza7bglei_large.jpg); }
 .box-2 { background-image: url(https://www.apple.com/v/home/ci/images/promos/ipad-air/promo_ipad_air_avail__6i02t7nujr62_large.jpg); }
@@ -1051,7 +1052,7 @@
     gap: 0;
     display: none;
     padding: 12px 0;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   }
    .nav {
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
@@ -1095,11 +1096,12 @@
 /* ================= HERO MOBILE RESPONSIVE ================= */
 @media (max-width: 768px) {
   .hero-content {
-    min-height: 98.5vh;
+    min-height: 100vh;
     height: auto;
     background-position: center top;
     background-image: none;
     overflow: hidden;
+    margin-bottom: 2px;
   }
    .bg-video {
     display: block;
@@ -1121,7 +1123,7 @@
   .Air-content {
     min-height: 90vh;
     height: auto;
-    padding: 40px 16px;
+    padding: 8px 16px;
     background-image: url(https://i.pinimg.com/1200x/43/bf/f2/43bff25ef7961e8ea39d796b3edd96cc.jpg);
     background-position: center top;
   }
@@ -1149,9 +1151,10 @@
   }
   .box-1, .box-2, .box-3, .box-4 {
     width: 100%;
-    min-height: 73vh;
+    min-height: 61vh;
     height: auto;
     border-radius: 0;
+    margin-bottom: 5px;
   }
   .box-1 h1, .box-2 h1, .box-3 h1, .box-4 h1 {
     font-size: 28px;
@@ -1159,15 +1162,20 @@
   .box-1 p, .box-2 p, .box-3 p, .box-4 p {
     font-size: 16px;
   }
-
+.box-2{
+  background-image: url(https://www.apple.com/v/home/ck/images/promos/ipad-air/promo_ipad_air_avail__6i02t7nujr62_medium.jpg);
+}  
+.box-4 {
+  background-image: url(https://www.apple.com/v/home/ck/images/promos/iphone-tradein/promo_iphone_tradein__bugw15ka691e_medium.jpg);
+}
 }
 /* =================Watch-card ================= */
 @media (max-width: 768px) {
   .watch-content {
-    min-height: 66vh;
+    min-height: 67vh;
     height: auto;
-    padding: 20px 15px;
     background-position: center top;
+    background-image: url(https://www.apple.com/in/home/images/promos/apple-watch-se-3/promo_apple_watch_se_3__fz5y29qx5mmy_medium.jpg);
   }
   .watch-content h2 {
     font-size: 32px;
@@ -1341,6 +1349,18 @@
     padding: 10px 18px;
   }
 }
-
-
-
+/* -------------------BAG DROPDOWN ----------------------- */
+@media (max-width: 768px) {
+  .bag-dropdown {
+    padding: 80px 30px;  
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .bag-dropdown::after {
+    width: 100%;
+  }
+  .bag-preview-item img {
+    max-width: 100%;
+    height: auto;
+  }
+}
