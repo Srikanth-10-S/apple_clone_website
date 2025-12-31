@@ -1216,7 +1216,7 @@ html, body {
     width: 280px;
     height: 340px;
   }
-.card:hover {
+  .card:hover {
     transform: none;
     box-shadow: none;
   }
@@ -1235,20 +1235,22 @@ html, body {
   .Buy-item span {
     font-size: 13px;
   }
-  .card-info {
-    bottom: -10px;
-    left: 12px;
-    right: 12px;
-    padding: 10px 12px;
-    border-radius: 14px;
-    box-shadow: 0 10px 24px rgba(0,0,0,0.18);
-    opacity: 1;
-     transition: bottom .32s ease, opacity .22s ease;
-  }
+.card-info {
+  bottom: -10px;
+  left: 12px;
+  right: 12px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+  opacity: 0;
+  pointer-events: none;
+  transition: bottom .32s ease, opacity .22s ease;
+}
   .card.active .card-info {
-    bottom: 8px;            
-    opacity: 1;
-  }
+  bottom: 8px;
+  opacity: 1;
+  pointer-events: auto;
+}
   .card-info h2 {
     font-size: 14px;
     margin: 0 0 6px;
