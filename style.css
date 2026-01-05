@@ -1,0 +1,1409 @@
+/* ---------------------- MAin STYLE-CSS-PAGE  --------------------------------------- */
+
+* {  margin: 0; 
+     padding: 0;
+     box-sizing: border-box;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", 
+     Roboto, "Helvetica Neue", Arial;
+     line-height: 1.35;   
+  }
+html, body {
+  overflow-x: hidden;
+}
+/* ---------------------- TOP-NAVBAR-SECTION ---------------------------------- */
+
+.nav {
+  width: 100%;
+  background: #fff;
+  padding: 10px 20px;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  backdrop-filter: blur(15px);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/*---- CENTER AREA ALLOWED TO EXPAND ----*/
+.nav-center {
+  flex: 1;
+  display: flex;
+  justify-content: center; 
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+.nav-list li,
+.nav-list li a {
+  color: #000;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: none;
+}
+.nav-list li a i {
+  font-size: 14px;
+}
+/*---- SEARCH + BAG ICONS ----*/
+.nav-action i {
+  color: #000;
+  font-size: 15px;
+  margin-left: 18px;
+  cursor: pointer;
+}
+/*--- Mobile apple hidden on desktop ---*/
+.mobile-apple {
+  display: none;
+}
+/*---- Hamburger ----*/
+.menu-btn {
+  display: none;
+  width: 16px;
+  height: 10px;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  margin-left: 18px;
+}
+.menu-btn span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: #636161;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+/*----- Right icons alignment ----*/
+.nav-action {
+  display: flex;
+  align-items: center;
+}
+/*----  Dropdown hidden by default  -----*/
+.dropdown-menu {
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 70px 25%;
+  display: none;
+  z-index: 999;
+}
+/*--- Blur strip only at bottom ---*/
+.dropdown-menu::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    top: 100%;
+    height: 460px; /* strip height */
+    background: rgba(255, 255, 255, 0.708);
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    pointer-events: none;
+}
+.dropdown-menu.show {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0); 
+}
+.menu-panel{
+    display: flex;
+    gap: 90px;
+}
+.col-shop h4 {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 10px;
+}
+.col h4 {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 10px;
+}
+.col-shop a {
+    display: block;
+    margin: 6px 0;
+    font-size: 22px;
+    font-weight: 500;
+    color: #000;
+    text-decoration: none;
+}
+.col a {
+    display: block;
+    margin: 6px 0;
+    font-size: 14px;
+    color: #000;
+    text-decoration: none;
+}
+.col a:hover {
+    color: #888;
+}
+
+/*---- SEARCH-DROPD-DOWN ---- */
+.search-dropdown {
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 70px 25%;
+  display: none;
+  z-index: 999;
+}
+ .search-dropdown::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  top: 100%;
+  height: 460px; /* strip height */
+  background: rgba(255, 255, 255, 0.708);
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+  pointer-events: none;
+}
+.search-dropdown.active {
+  display: block;
+}
+.search-input-box input {
+  width: 100%;
+  font-size: 22px;
+  padding: 12px 0;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #ccc;
+}
+.search-quick-links {
+  margin-top: 30px;
+}
+.search-quick-links h4 {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 12px;
+}
+.search-quick-links a {
+  display: block;
+  font-size: 16px;
+  color: #000;
+  text-decoration: none;
+  padding: 6px 0;
+}
+.search-quick-links a:hover {
+  text-decoration: underline;
+}
+
+/* --- BAG ICON --- */
+.bag-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+.bag-wrapper i {
+  font-size: 16px;
+}
+/* count */
+.bag-count {
+  position: absolute;
+  bottom: -3px;
+  right: -5px;
+  width: 13px;
+  height: 13px;
+  background: #000;
+  color: #fff;
+  font-size: 9px;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+/* ----- BAG DROPDOWN ---------------- */
+.bag-dropdown {
+  position: fixed;
+  top: 0;            
+  left: 0;
+  width: 100%;
+  background: #fff;
+  padding: 80px 25%;    
+  display: none;
+  z-index: 1000;
+  border-bottom: 1px solid #ddd;
+}
+/* Blur background strip */
+.bag-dropdown::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: 400px;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  pointer-events: none;
+}
+.bag-dropdown.active {
+  display: block;
+}
+/* Empty state */
+.empty-title {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.empty-sub {
+  font-size: 14px;
+  color: #666;
+  margin-top: 6px;
+}
+.empty-sub a {
+  color: #06c;
+  text-decoration: none;
+  text-decoration: underline;
+}
+.empty-sub a:hover{
+  color: rgba(0, 102, 204, 0.495);
+}
+.bag-divider {
+  height: 1px;
+  background: #eee;
+  margin: 16px 0;
+}
+/* Profile section */
+.profile-title {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 8px;
+}
+.profile-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  color: #000;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 3s;
+}
+.profile-link:hover{
+  color: #777;
+}
+.profile-link i {
+  font-size: 14px;
+}
+
+/* ===== TOP ROW (IMAGE LEFT, BUTTON RIGHT) ===== */
+.bag-top-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+/* ===== LEFT: PREVIEW STACK ===== */
+.bag-preview-images {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+/* PREVIEW ITEM */
+.bag-preview-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+/* IMAGE */
+.bag-preview-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+/* TEXT */
+.bag-preview-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+.bag-preview-name {
+  font-size: 14px;
+  color: #1d1d1f;
+}
+.bag-preview-qty {
+  font-size: 13px;
+  color: #6e6e73;
+}
+/* ===== REVIEW BUTTON (RIGHT SIDE) ===== */
+.bag-preview-btn {
+  align-self: flex-start;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: #0071e3;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.bag-preview-btn:hover {
+  background-color: #005bb5;
+}
+.bag-more-text {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #6e6e73;
+}
+
+/* ---------------------- MAIN-HERO-SECTION ---------------------------------- */
+
+.hero-section {     
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: #fff; 
+}
+.hero-content {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  background-image: url(https://www.apple.com/v/home/ci/images/heroes/iphone-17-pro/hero_iphone_17_pro__bknyzxfk2agi_medium.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hero-content h1 {
+  font-size: 48px;
+  font-weight: 600;
+  margin: 60px 0 10px;
+}
+.hero-content h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+/*----- CTA links ---*/
+.cta-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+.cta-links a {
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 50px;
+  padding: 12px 18px;
+  display: inline-block;
+}
+/*---- Primary button ---*/
+.h-btn {
+  background: #2997ff;
+  color: #fff;
+}
+/*--- Secondary button ----*/
+.h2-btn {
+  border: 2px solid #2997ff;
+  color: #2997ff;
+}
+.h2-btn:hover {
+  background: #2997ff;
+  color: #fff;
+  transition: 0.2s ease-in-out;
+}
+.bg-video {
+  display: none;
+}
+/* ---------------------- IPHONE-AIR-SECTION ---------------------------------- */
+.Air-book {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.Air-content {
+  background-image: url(https://www.apple.com/v/home/ci/images/heroes/iphone-air/hero_iphone_air__0gxyavihpiqu_medium.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 80vh;
+  color: #000;
+}
+.Air-content h2 {
+  margin-top: 50px;
+  font-size: 48px;
+  font-weight: 700;
+}
+.Air-content p {
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+/*---- CTA links ----*/
+.Air-cta-link {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+.cta-1-btn,
+.cta-2-btn {
+  text-decoration: none;        
+  font-size: 18px;
+  padding: 12px 20px;
+  border-radius: 50px;
+  display: inline-block;
+}
+/*---- Primary button -----*/
+.cta-1-btn {
+  background: #2997ff;
+  color: #fff;
+}
+/*----- Secondary button ------*/
+.cta-2-btn {
+  border: 2px solid #2997ff;
+  color: #2997ff;
+}
+.cta-2-btn:hover {
+  background: #2997ff;
+  color: #fff;
+  transition: 0.2s ease-in-out;
+}
+
+/* ---------------------- FLEX-BOX-SECTION ---------------------------------- */
+
+.main,
+.outer {
+    display: flex;
+    margin: 6px;
+}
+/* ----- COMMON-BOX ----- */
+.box-1, .box-2, .box-3, .box-4 {
+  flex:1 1 49%;
+  height: 70vh;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding-top: 30px;
+  border-radius: 8px;
+  color: #000;
+  margin-right: 6px;
+}
+.box-1 { background-image: url(https://www.apple.com/v/home/ci/images/promos/airpods-pro-3/promo_airpodspro_3__f6xmza7bglei_large.jpg); }
+.box-2 { background-image: url(https://www.apple.com/v/home/ci/images/promos/ipad-air/promo_ipad_air_avail__6i02t7nujr62_large.jpg); }
+.box-3 { background-image: url(https://www.apple.com/v/home/ci/images/promos/macbook-air/promo_macbook_air__fqowrtnxewqe_medium.jpg); }
+.box-4 { background-image: url(https://www.apple.com/v/home/ci/images/promos/iphone-tradein/promo_iphone_tradein__bugw15ka691e_large.jpg); }
+/* ------- TEXT -------- */
+.box-1 h1, .box-2 h1, .box-3 h1, .box-4 h1 {
+  font-size: 40px;
+  font-weight: 700;
+}
+.box-1 p, .box-2 p, .box-3 p, .box-4 p {
+  font-size: 20px;
+  padding-bottom: 17px;
+}
+/* ------ GRADIENT TEXT ------ */
+.pad {
+  background: linear-gradient(90deg, #359df1, #7bb5db);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.mac {
+  background: linear-gradient(90deg,#9e7ad3,#dca5f1,#ee8ed9);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+/* -------- CTA BUTTONS ------- */
+.flex-cta-link {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+.cta-1-btn,
+.cta-2-btn {
+  text-decoration: none;
+  font-size: 18px;
+  padding: 12px 18px;
+  border-radius: 50px;
+  display: inline-block;
+}
+.cta-1-btn {
+  background: #2997ff;
+  color: #fff;
+}
+.cta-2-btn {
+  border: 2px solid #2997ff;
+  color: #2997ff;
+}
+.cta-2-btn:hover {
+  background: #2997ff;
+  color: #fff;
+  transition: 0.2s ease-in-out;
+}
+
+/* ---------------------- WATCH-SECTION ---------------------------------- */
+
+.Apple-watch {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.watch-content {
+  background-image: url(https://i.pinimg.com/1200x/23/03/9c/23039c19ed7dadf215b4dfa183c3be9d.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 80vh;
+  color: #000;
+}
+.watch-content h2 {
+  margin-top: 50px;
+  font-size: 48px;
+  font-weight: 700;
+}
+.watch-content p {
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+/*---- Gradient text ----*/
+.pro {
+  background: linear-gradient(90deg, #7fcaff, #b89aff, #ff90c8);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+/*------ CTA Buttons -----*/
+.watch-cta-link {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+.cta-1-btn,
+.cta-2-btn {
+  text-decoration: none;        
+  font-size: 18px;
+  padding: 12px 20px;
+  border-radius: 50px;
+  display: inline-block;
+}
+.cta-1-btn {
+  background: #2997ff;
+  color: #fff;
+}
+.cta-2-btn {
+  border: 2px solid #2997ff;
+  color: #2997ff;
+}
+.cta-2-btn:hover {
+  background: #2997ff;
+  color: #fff;
+  transition: 0.2s ease-in-out;
+}
+
+/* ---------------------- scroll-CARDS-SECTION ---------------------------------- */
+
+.main-title h2 {
+  text-align: left;
+  font-size: 30px;
+  font-weight: 700;
+  color: #515154;
+  padding-left: 90px ;
+  margin-top: 10px;
+  margin-bottom: 20px; 
+}
+.get{
+  background: linear-gradient( 90deg, #4db0f7, #e67b3d);
+   background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+.Buy-item {
+    position: absolute;
+    top: 25px;
+    left: 40px;
+    color: #515154;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.Buy-item h3 {
+  font-size: 32px;
+  line-height: 1.1;
+  font-weight: 700;
+  color: #111;
+}
+.Buy-item p {
+    font-size: 16px;
+    background: linear-gradient( 90deg, #35a1ef, #f67e39);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 500;
+}
+.Buy-item span {
+    font-size: 16px;
+    color: #000;
+    font-weight: 400;
+}
+.slider-wrapper{
+  position:relative;
+  width:100%;
+  overflow:hidden;
+  margin: 0 auto;
+}
+.card-container{
+  display:flex;
+  gap:30px;
+  overflow-x:auto;
+  scroll-behavior:smooth;
+  padding:20px 90px;
+  flex-wrap:nowrap;
+}
+.card-container::-webkit-scrollbar{
+  display:none;
+}
+.card{
+  position:relative;
+  width:400px;
+  height:450px;
+  border-radius:25px;
+  overflow:hidden;
+  cursor:pointer;
+  flex:0 0 auto; 
+  background: transparent;
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.card:hover{ 
+  transform: translateY(-1px);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.25);
+ }
+.img-box{ 
+  width:100%; 
+  height:100%; 
+}
+.img-box img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  border-radius:25px;
+}
+.card-info{
+  position:absolute;
+  bottom:-160px;
+  left:20px;
+  right:20px;
+  background:#fff;
+  padding:18px 20px;
+  border-radius:18px;
+  box-shadow:0 20px 45px rgba(0,0,0,0.25);
+  opacity:0;
+  transition: bottom .55s cubic-bezier(.25,.85,.25,1), opacity .45s ease;
+}
+.card:hover .card-info{
+  bottom:10px;
+  opacity:1;
+}
+.card-info h2{
+  font-size:19px;
+  font-weight:600;
+  margin:4px 0 6px;
+  color:#1d1d1f;
+}
+.card-info p{
+  font-size:14px;
+  color:#6e6e73;
+  margin-bottom:14px;
+  line-height:1.45;
+}
+.card-bottom{ 
+  display:flex;
+   justify-content:space-between; 
+   align-items:center;
+   }
+.price{ 
+  font-size:18px; 
+  font-weight:700; 
+  color:#333;
+ }
+.add-btn{
+  background:#0071e3;
+  color:#fff;
+  border:none;
+  padding:8px 16px;
+  border-radius:12px;
+  font-size:14px;
+  font-weight:500;
+  cursor:pointer;
+  transition: background .25s ease, transform .18s ease;
+}
+.add-btn:hover{ 
+  background:#0077ed; 
+  transform:translateY(-2px); 
+}
+.add-btn:active{ 
+  background:#0065c6; 
+  transform:translateY(0);
+ }
+.slide-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  padding:8px 20px;
+  font-size:30px;
+  border:none;
+  background:rgba(255, 255, 255, 0.262);
+  backdrop-filter:blur(15px);
+  border-radius:50%;
+  opacity: 0;
+  cursor:pointer;
+  pointer-events:none;
+  transition:opacity .28s ease, transform .18s ease;
+  box-shadow:0 6px 18px rgba(0,0,0,0.18);
+}
+.slide-btn.left{
+   left:20px;
+   }
+.slide-btn.right{ 
+  right:20px;
+ }
+.slider-wrapper:hover .slide-btn{ 
+  opacity:1;
+  pointer-events:auto;
+}
+.slide-btn:active{ 
+  transform:translateY(-50%) scale(.98);
+ }
+
+/* ---------------------- SLIDING-CARDS-SECTION ---------------------------------- */
+
+.main-title {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 700;
+  color: #1d1d1f;
+  margin-top: 120px;
+  margin-bottom: 50px;
+}
+.product-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.slider-track {
+  display: flex;
+  gap: 30px;
+  padding: 20px 90px;
+  overflow: hidden;        
+  touch-action: none;     
+  overscroll-behavior: none;
+}
+.slider-track::-webkit-scrollbar {
+  display: none;
+}
+/* CARD */
+.product-card {
+  position: relative;
+  width: 400px;
+  height: 450px;
+  border-radius: 25px;
+  overflow: hidden;
+  flex: 0 0 auto;
+  cursor: pointer;
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.product-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.15),
+    0 1px 4px rgba(0, 0, 0, 0.1);
+}
+/* TEXT OVER IMAGE */
+.card-top-inside {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  z-index: 2;
+
+  color: #1d1d1f;
+}
+.card-top-inside h3 {
+  font-size: 32px;
+  font-weight: 700;
+}
+.card-top-inside p {
+  font-size: 14px;
+  margin-top: 6px;
+  background: linear-gradient( 90deg, #35a1ef, #f67e39);
+   background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.card-top-inside span {
+  display: block;
+  margin-top: 6px;
+  font-size: 15px;
+  font-weight: 600;
+}
+/* IMAGE */
+.product-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+/* ARROWS */
+.bottom-arrows {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+.arrow-small {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  font-size: 18px;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.25s;
+}
+.arrow-small:hover {
+  background: #000;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* ---------------------- VIDEO-PLAY-SECTION ---------------------------------- */
+
+/* Main Title */
+.tv-main-title {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-top: 50px;
+  margin-bottom: 70px;
+  color: #1d1d1f;
+}
+/* Center video */
+.video-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 120px;
+}
+/* Video Styling */
+.feature-video {
+  width: 80%;
+  height: 520px;
+  object-fit: cover;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.20);
+  border-radius: 8px;
+}
+
+/* ----------------------  MUSIC-CARD-SECTION ---------------------------------- */
+
+.colo-display {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+.col-card {
+  width: 90%;
+  height: 450px;
+  background: linear-gradient(165deg,rgba(158, 58, 58, 0.98) 0%,rgba(248, 5, 25, 1) 35%,rgba(249, 2, 118, 1) 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 25px;
+  border-radius: 8px; 
+}
+.icon-row {
+  display: flex;
+  justify-content: center;
+}
+.icon {
+  width: 220px;
+  height: auto;
+}
+.col-content h2 {
+  font-size: 45px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 18px;
+}
+.music-btn {
+  padding: 14px 30px;
+  background: white;
+  color: black;
+  border: none;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+.music-btn:hover {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+/* ---------------------- FOOTER-SECTION ---------------------------------- */
+
+.apple-footer {
+  background: #f5f5f7;
+  padding: 60px 0 30px;
+  color: #6e6e73;
+}
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+/* Columns */
+.footer-col {
+  flex: 1 1 200px;
+}
+.footer-col h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin-bottom: 8px;
+}
+.footer-col ul {
+  list-style: none;
+}
+.footer-col ul li {
+  margin: 6px 0;
+}
+.footer-col ul li a {
+  font-size: 14px;
+  color: #6e6e73;
+  text-decoration: none;
+}
+.footer-col ul li a:hover {
+  text-decoration: underline;
+}
+/* Divider */
+.footer-divider {
+  height: 1px;
+  background: #d2d2d7;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+/* Bottom bar */
+.footer-bottom {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+.footer-bottom p {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.footer-links {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.footer-links li {
+  list-style: none;
+}
+.footer-links a {
+  font-size: 12px;
+  color: #6e6e73;
+  text-decoration: none;
+}
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/*-----------------MOBILE-RESPONSIVE CODE-----------*/
+
+/* =================nav-MOBILE Responsive ================= */
+@media (max-width: 900px) {
+  /* Hide desktop center nav */
+   /* hide menu by default */
+  .nav-list {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    gap: 0;
+    display: none;
+    padding: 12px 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  }
+   .nav {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+   }
+  /* show menu when hamburger clicked */
+  .nav-list.show {
+    display: flex;
+  }
+   .nav-list li {
+    font-size: 17px;
+    padding: 12px 20px;
+  }
+  .nav-center{
+    flex: 1;
+    display: flex;
+    justify-content: right;
+  }
+  .nav-list.active {
+    display: flex;
+  }
+  /* Show mobile apple logo */
+  .mobile-apple {
+    display: flex;
+    align-items: center;
+  }
+  .mobile-apple i {
+    font-size: 16px;
+    color: #000; /* black apple */
+  }
+  /* Show hamburger */
+  .menu-btn {
+    display: flex;
+  }
+  /* Proper spacing on right */
+  .nav-action i {
+    margin-left: 16px;
+    font-size: 16px;
+  }
+  /* Layout fix */
+  .nav-inner {
+    justify-content: space-between;
+  }
+}
+/* ================= HERO MOBILE RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .hero-content {
+    min-height: 100vh;
+    height: auto;
+    background-position: center top;
+    background-image: none;
+    overflow: hidden;
+    margin-bottom: 2px;
+  }
+   .bg-video {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  .hero-content h1,
+  .hero-content h2,
+  .hero-content .cta-links {
+    display: none;
+  }
+}
+/* =================iPhone-Air MOBILE RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .Air-content {
+    min-height: 90vh;
+    height: auto;
+    padding: 8px 16px;
+    background-image: url(https://i.pinimg.com/1200x/43/bf/f2/43bff25ef7961e8ea39d796b3edd96cc.jpg);
+    background-position: center top;
+  }
+  .Air-content h2 {
+    color: #fff;
+    font-size: 34px;
+    margin-top: 20px;
+  }
+  .Air-content p {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 24px;
+  }
+  .cta-1-btn,
+  .cta-2-btn {
+    width: 144px;
+    padding: 14px 0;
+  }
+}
+/* ==================Flex-cards MOBILE Responsive ================== */
+@media (max-width: 768px) {
+  .main, .outer {
+    flex-direction: column;
+    margin: 0;
+  }
+  .box-1, .box-2, .box-3, .box-4 {
+    width: 100%;
+    min-height: 61vh;
+    height: auto;
+    border-radius: 0;
+    margin-bottom: 5px;
+    margin-right: 0;
+  }
+  .box-1 h1, .box-2 h1, .box-3 h1, .box-4 h1 {
+    font-size: 28px;
+  }
+  .box-1 p, .box-2 p, .box-3 p, .box-4 p {
+    font-size: 16px;
+  }
+.box-2{
+  background-image: url(https://www.apple.com/v/home/ck/images/promos/ipad-air/promo_ipad_air_avail__6i02t7nujr62_medium.jpg);
+}  
+.box-4 {
+  background-image: url(https://www.apple.com/v/home/ck/images/promos/iphone-tradein/promo_iphone_tradein__bugw15ka691e_medium.jpg);
+}
+}
+/* =================Watch-card ================= */
+@media (max-width: 768px) {
+  .watch-content {
+    min-height: 67vh;
+    height: auto;
+    background-position: center top;
+    background-image: url(https://www.apple.com/in/home/images/promos/apple-watch-se-3/promo_apple_watch_se_3__fz5y29qx5mmy_medium.jpg);
+  }
+  .watch-content h2 {
+    font-size: 32px;
+    margin-top: 30px;
+    margin-bottom: 8px;
+  }
+  .watch-content p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .watch-cta-link {
+    gap: 12px;
+  }
+  .cta-1-btn,
+  .cta-2-btn {
+    width: 130px;
+    padding: 10px 0;
+    font-size: 15px;
+  }
+}
+/* -------------- Scroll-card------------------ */
+@media (max-width: 768px) {
+  .main-title h2 {
+    font-size: 22px;
+    padding-left: 20px;
+  }
+  .card-container {
+    padding-left: 16px;
+    padding-right: 16px;
+    gap: 18px;
+  }
+  .card {
+    width: 280px;
+    height: 340px;
+  }
+  .card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  .Buy-item {
+    top: 20px;
+    left: 30px;
+    gap: 4px;
+  }
+  .Buy-item h3 {
+    font-size: 21px;
+    font-weight: 600;
+  }
+  .Buy-item p {
+    font-size: 13px;
+  }
+  .Buy-item span {
+    font-size: 13px;
+  }
+.card-info {
+  bottom: -10px;
+  left: 12px;
+  right: 12px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+  opacity: 0;
+  pointer-events: none;
+  transition: bottom .32s ease, opacity .22s ease;
+}
+  .card.active .card-info {
+  bottom: 8px;
+  opacity: 1;
+  pointer-events: auto;
+}
+  .card-info h2 {
+    font-size: 14px;
+    margin: 0 0 6px;
+  }
+  .card-info p {
+    font-size: 12px;
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+  .price {
+    font-size: 14px;
+  }
+  .add-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 10px;
+  }
+  .slide-btn {
+   display: none;
+}
+}
+/* -------------- Sliding-card------------------ */
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 22px;
+    margin-top: 70px;
+    padding: 0 16px;
+  }
+  .slider-track {
+    overflow: hidden;        
+    touch-action: pan-x;    
+    overscroll-behavior: none;
+    padding: 16px 30px;
+    gap: 20px;
+  }
+  .product-card {
+    width: 70vw;
+    max-width: 280px;
+    height: 340px;
+    border-radius: 20px;
+  }
+  .card-top-inside h3 {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.25;
+  }
+  .card-top-inside p {
+    font-size: 12px;
+  }
+  .card-top-inside span {
+    font-size: 10px;
+  }
+}
+/* -------------- Video play-card ------------------ */
+@media (max-width: 768px) {
+  .tv-main-title {
+    font-size: 28px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    line-height: 1.2;
+  }
+  .video-wrapper {
+    margin-bottom: 80px;
+  }
+  .feature-video {
+    width: 95%;
+    height: auto;              
+    aspect-ratio: 16 / 9;      
+    border-radius: 14px;
+  }
+}
+/* -------------- Music-card ------------------ */
+@media (max-width: 768px) {
+  .colo-display {
+    margin-bottom: 40px;
+    padding: 0 16px;
+  }
+  .col-card {
+    width: 100%;
+    height: 220px;
+    padding: 20px;
+    gap: 16px;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .icon {
+    width: 120px;
+    flex-shrink: 0; 
+  }
+  .col-content {
+    flex: 1;
+    text-align: left;
+  }
+  .col-content h2 {
+    font-size: 18px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+  .music-btn {
+    font-size: 12px;
+    padding: 10px 18px;
+  }
+}
+/* -------------------BAG DROPDOWN ----------------------- */
+@media (max-width: 768px) {
+  .bag-dropdown {
+    padding: 80px 30px;  
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .bag-dropdown::after {
+    width: 100%;
+  }
+  .bag-preview-item img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+/* ------------------- REVIEW BAG ANIMATION ----------------------- */
+.bag-preview-btn {
+  transition: 
+    transform 0.18s ease-out,
+    box-shadow 0.18s ease-out,
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+.bag-preview-btn:active {
+  transform:  scale(0.98);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.18);
+}
+/* ------------------- MAIN BUY BUTTON ANIMATION ----------------------- */
+.h2-btn {
+    transition: 
+    transform 0.18s ease-out,
+    box-shadow 0.18s ease-out,
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+.h2-btn:active {
+  transform:  scale(0.98);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.18);
+}
+/* ------------------- FLEX BUY BUTTON ANIMATION ----------------------- */
+.cta-2-btn {
+transition: 
+    transform 0.18s ease-out,
+    box-shadow 0.18s ease-out,
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+.cta-2-btn:active {
+  transform:  scale(0.98);
+  box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.18);
+}
